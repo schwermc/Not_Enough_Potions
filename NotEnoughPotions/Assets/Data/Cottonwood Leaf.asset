@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d3920e49b3f554b896417002080b07, type: 3}
   m_Name: Cottonwood Leaf
   m_EditorClassIdentifier: 
-  description: 
-  ingredientType: 
+  description: Helps lower fevers, reduce inflammation, and ease general pain
+  type: 0
   image: {fileID: 0}
   model: {fileID: 0}

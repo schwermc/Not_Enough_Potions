@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d3920e49b3f554b896417002080b07, type: 3}
   m_Name: Copper Supplement
   m_EditorClassIdentifier: 
-  description: 
-  type: 0
+  description: Helps the body use iron and is important for nerve function & bone
+    growth
+  type: 1
   image: {fileID: 0}
   model: {fileID: 0}
