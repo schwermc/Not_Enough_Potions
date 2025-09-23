@@ -1,4 +1,5 @@
 # Not_Enough_Potions
 Play Me: https://schwermc.github.io/Not_Enough_Potions/ <br />
 WASD for Movement <br />
-Mouse to look around
+Mouse to look around <br />
+E to interact with ingredeients
