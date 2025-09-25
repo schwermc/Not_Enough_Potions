@@ -1,18 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private CharacterController _controller;
+    private bool active = false;
+    public GameObject inventory;
+
+    void Awake()
     {
-        
+        _controller = gameObject.GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            updateUI();
+        }
+    }
+
+    void updateUI()
+    {
+        if (!active)
+        {
+            active = true;
+            Time.timeScale = 0f;
+            inventory.SetActive(active);
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            active = false;
+            Time.timeScale = 1f;
+            inventory.SetActive(active);
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 }
