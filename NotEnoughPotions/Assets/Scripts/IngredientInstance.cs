@@ -12,6 +12,7 @@ public class IngredientInstance : MonoBehaviour
     private MeshRenderer mesh;
     private bool _mesh = true;
     private bool playerCollision = false;
+    public bool gotIngredient = false;
 
     public void Start()
     {
@@ -26,7 +27,7 @@ public class IngredientInstance : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && playerCollision)
             change();
     }
-
+/*
     public void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Player")
@@ -44,19 +45,22 @@ public class IngredientInstance : MonoBehaviour
             playerCollision = false;
         }
     }
-
-    private void change() {
+*/
+    public void change()
+    {
         if (_mesh == true)
         {
             mesh.enabled = false;
             _mesh = false;
             Debug.Log(m_name + " mesh off");
+            gotIngredient = true;
         }
         else
         {
             mesh.enabled = true;
             _mesh = true;
             Debug.Log(m_name + " mesh on");
+            gotIngredient = false;
         }
     }
 }

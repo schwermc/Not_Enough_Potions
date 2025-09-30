@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8630306959239786245}
   m_Layer: 0
   m_Name: Powder
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 71c1af9b72e7b044db3fdb9c4d17e7ab, type: 2}
   popUpUI: {fileID: 0}
+  gotIngredient: 0
