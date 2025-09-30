@@ -40,4 +40,9 @@ public class InventorySlot
     {
         amount += value;
     }
+
+    public void SubAmount(int value)
+    {
+        amount -= value;
+    }
 }

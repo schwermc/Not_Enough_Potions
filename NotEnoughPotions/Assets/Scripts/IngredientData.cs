@@ -7,9 +7,8 @@ public class IngredientData : ScriptableObject
     public string description;
     public IngredientType type;
 
-    // UI display
-    public Sprite image;
-    // Scene / object display;
+    // public Sprite image;
+    public GameObject UIimage;
     public GameObject model;
 }
 
