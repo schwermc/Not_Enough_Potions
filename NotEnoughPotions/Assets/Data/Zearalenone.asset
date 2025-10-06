@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d3920e49b3f554b896417002080b07, type: 3}
   m_Name: Zearalenone
   m_EditorClassIdentifier: 
+  ingredientName: Zearalenone
   description: If used on animals it can cause reproduction problems, but if used
     on humans, it can disrupt hormonal balance
   type: 2
