@@ -13,7 +13,7 @@ public class CauldronBehavior : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Player" && !doneToday && inventory.Container.Count > 0)
+        if (collider.tag == "Player" && !doneToday && inventory.Container.Count > 0) // Item count can go into the negative
         {
             var item = inventory.Container[0].getIngredient();
             inventory.SubItem(item, 1);
