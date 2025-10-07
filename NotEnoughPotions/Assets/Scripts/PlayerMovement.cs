@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
+    private CharacterController _controller;
     public float speed = 12f;
+
+    void Awake()
+    {
+        _controller = gameObject.GetComponent<CharacterController>();
+    }
 
     void Update()
     {
@@ -12,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+        _controller.Move(move * speed * Time.deltaTime);
     }
 
 }
