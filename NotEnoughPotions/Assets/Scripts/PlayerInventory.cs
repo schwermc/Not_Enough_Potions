@@ -5,7 +5,7 @@ public class PlayerInventory : MonoBehaviour
     private CharacterController _controller;
     private bool active = false;
     public GameObject inventory;
-    public InventoryObject inventoryObject;
+    public InventoryData inventoryObject;
 
     void Awake()
     {

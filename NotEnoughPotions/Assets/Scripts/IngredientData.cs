@@ -3,11 +3,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newIngredient", menuName = "Item/Ingredient")]
 public class IngredientData : ScriptableObject
 {
+    public string ingredientName;
     [TextArea(15, 10)]
     public string description;
     public IngredientType type;
 
-    // public Sprite image;
     public GameObject UIimage;
     public GameObject model;
 }
