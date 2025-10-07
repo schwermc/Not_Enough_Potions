@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor;
 
 public class IngredientInstance : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class IngredientInstance : MonoBehaviour
     private IngredientType m_type;
     private MeshRenderer mesh;
     private bool _mesh = true;
-    private bool playerCollision = false;
+    public bool gotIngredient = false;
 
     public void Start()
     {
@@ -21,42 +20,13 @@ public class IngredientInstance : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && playerCollision)
-            change();
-    }
-
-    public void OnTriggerEnter(Collider collider)
-    {
-        if (collider.tag == "Player")
-        {
-            popUpUI.SetActive(true);
-            playerCollision = true;
-        }
-    }
-
-    public void OnTriggerExit(Collider collider)
-    {
-        if (collider.tag == "Player")
-        {
-            popUpUI.SetActive(false);
-            playerCollision = false;
-        }
-    }
-
-    private void change() {
+    public void change() {
         if (_mesh == true)
         {
             mesh.enabled = false;
             _mesh = false;
             Debug.Log(m_name + " mesh off");
-        }
-        else
-        {
-            mesh.enabled = true;
-            _mesh = true;
-            Debug.Log(m_name + " mesh on");
+            gotIngredient = true;
         }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "newIngredient", menuName = "Ingredient")]
+[CreateAssetMenu(fileName = "newIngredient", menuName = "Item/Ingredient")]
 public class IngredientData : ScriptableObject
 {
     public string ingredientName;
@@ -8,9 +8,7 @@ public class IngredientData : ScriptableObject
     public string description;
     public IngredientType type;
 
-    // UI display
-    public Sprite image;
-    // Scene / object display;
+    public GameObject UIimage;
     public GameObject model;
 }
 

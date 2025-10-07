@@ -7,7 +7,6 @@ public class PotiontData : ScriptableObject
     [TextArea(15, 10)]
     public string description;
 
-    // public Sprite image;
     public GameObject UIimage;
     public GameObject model;
 }
