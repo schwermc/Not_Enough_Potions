@@ -58,7 +58,7 @@ public class InventorySlot
         amount -= value;
     }
 
-    public ItemData getIngredient()
+    public ItemData getItem()
     {
         return item;
     }
