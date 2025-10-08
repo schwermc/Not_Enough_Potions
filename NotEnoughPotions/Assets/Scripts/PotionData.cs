@@ -1,12 +1,15 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "newPotion", menuName = "Item/Potion")]
-public class PotiontData : ScriptableObject
+public class PotiontData : ItemData
 {
-    public string ingredientName;
-    [TextArea(15, 10)]
-    public string description;
+    public PotionType type;
+}
 
-    public GameObject UIimage;
-    public GameObject model;
+public enum PotionType
+{
+    Enhancing,
+    Emotion,
+    Regeneration,
+    Elemental
 }
