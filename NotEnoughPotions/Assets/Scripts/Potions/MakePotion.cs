@@ -7,12 +7,50 @@ public class MakePotion : MonoBehaviour
     public InventoryData inventory;
     public List<IngredientInfo> Container = new List<IngredientInfo>();
 
-    public void addToInventory()
+    bool checkList()
     {
-        Debug.Log("Enter");
+        bool notInList = false;
         for (int i = 0; i < Container.Count; i++)
         {
-            inventory.SubItem(Container[i].item, Container[i].amount);
+            for (int j = 0; j < inventory.Container.Count; j++)
+            {
+                if (Container[i].item == inventory.Container[j].item)
+                {
+                    // Debug.Log(Container[i].item + " : " + inventory.Container[j].item);
+                    if (Container[i].amount > inventory.Container[j].amount)
+                    {
+                        // Debug.Log(Container[i].amount + " : " + inventory.Container[j].amount);
+                        return false;
+                    }
+                    notInList = false;
+                }
+                else
+                {
+                    // Debug.Log(Container[i].item + " : " + inventory.Container[j].item);
+                    notInList = true;
+                }
+            }
+        }
+
+        if (notInList)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public void addToInventory(PotionInstance _item, int _amount)
+    {
+        bool check = checkList();
+        if (check)
+        {
+            for (int i = 0; i < Container.Count; i++)
+            {
+                inventory.SubItem(Container[i].item, Container[i].amount);
+            }
+            inventory.AddItem(_item.data, _amount);
+            _item.change();
         }
     }
 }

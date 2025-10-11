@@ -25,7 +25,7 @@ public class IngredientInstance : MonoBehaviour
         {
             mesh.enabled = false;
             _mesh = false;
-            Debug.Log(m_name + " mesh off");
+            // Debug.Log(m_name + " mesh off");
             gotIngredient = true;
         }
     }

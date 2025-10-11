@@ -37,9 +37,7 @@ public class PlayerInventory : MonoBehaviour
             var potion = collider.GetComponent<MakePotion>();
             if (item && !item.gotPotion)
             {
-                inventoryObject.AddItem(item.data, 1);
-                potion.addToInventory();
-                item.change();
+                potion.addToInventory(item, 1);
             }
         }
     }

@@ -62,4 +62,9 @@ public class InventorySlot
     {
         return item;
     }
+
+    public int getAmount()
+    {
+        return amount;
+    }
 }
