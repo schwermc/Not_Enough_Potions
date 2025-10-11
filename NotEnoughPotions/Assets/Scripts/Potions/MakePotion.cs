@@ -5,11 +5,21 @@ public class MakePotion : MonoBehaviour
 {
 
     public InventoryData inventory;
-    public List<ItemData> Container = new List<ItemData>();
+    public List<IngredientInfo> Container = new List<IngredientInfo>();
 
-    // Remove ingredients from the inventory when a new potion is added
-    void Update()
+    public void addToInventory()
     {
-
+        Debug.Log("Enter");
+        for (int i = 0; i < Container.Count; i++)
+        {
+            inventory.SubItem(Container[i].item, Container[i].amount);
+        }
     }
+}
+
+[System.Serializable]
+public class IngredientInfo
+{
+    public ItemData item;
+    public int amount;
 }

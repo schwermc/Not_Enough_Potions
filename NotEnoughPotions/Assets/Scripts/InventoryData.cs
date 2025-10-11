@@ -27,7 +27,7 @@ public class InventoryData : ScriptableObject
     {
         for (int i = 0; i < Container.Count; i++)
         {
-            if (Container[i].item == _item)
+            if (Container[i].item == _item && Container[i].amount >= Container[i].amount + 0)
             {
                 Container[i].SubAmount(_amount);
                 break;
