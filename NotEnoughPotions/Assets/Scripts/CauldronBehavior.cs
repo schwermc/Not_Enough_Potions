@@ -28,7 +28,7 @@ public class CauldronBehavior : MonoBehaviour
 
     bool makePotionCheck(Collider collider, int index) {
         bool check = false;
-        if (collider.tag == "Player" && !doneToday && inventory.Container.Count > 0 && inventory.Container[index].amount > 0)
+        if (collider.tag == "Player" && !doneToday && inventory.Container.Count > 0 && inventory.Container[index].getAmount() > 0)
         {
             check = true;
         }

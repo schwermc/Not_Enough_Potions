@@ -10,7 +10,7 @@ public class InventoryData : ScriptableObject
         bool hasItem = false;
         for (int i = 0; i < Container.Count; i++)
         {
-            if (Container[i].item == _item)
+            if (Container[i].getItem() == _item)
             {
                 Container[i].AddAmount(_amount);
                 hasItem = true;
@@ -27,12 +27,25 @@ public class InventoryData : ScriptableObject
     {
         for (int i = 0; i < Container.Count; i++)
         {
-            if (Container[i].item == _item && Container[i].amount >= Container[i].amount + 0)
+            if (Container[i].getItem() == _item && Container[i].getAmount() >= Container[i].getAmount() + 0)
             {
                 Container[i].SubAmount(_amount);
                 break;
             }
         }
+    }
+
+    public int FindItem(ItemData _item)
+    {
+        int index = -1;
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (_item == Container[i].getItem())
+            {
+                index = i;
+            }
+        }
+        return index;
     }
 }
 

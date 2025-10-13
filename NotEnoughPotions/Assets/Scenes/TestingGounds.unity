@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 550958872}
   - component: {fileID: 550958871}
   - component: {fileID: 550958870}
+  - component: {fileID: 550958874}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -418,6 +419,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &550958874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550958869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1980d3b36308da4ba66d74bc8737a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: e8e5b14ef44ee654193015e43545d2f6, type: 2}
+  Container:
+  - item: {fileID: 11400000, guid: d3d7e98fe110598479860e37051ebc28, type: 2}
+    amount: 1
 --- !u!1 &582967097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,7 +1353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd3d2b9d2587ed43b8f086404dfcc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potion: {fileID: 1435885687}
+  inventory: {fileID: 11400000, guid: e8e5b14ef44ee654193015e43545d2f6, type: 2}
+  customerCart: {fileID: 550958874}
 --- !u!1 &1283910677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,11 +1676,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608dd5936e0350743979045a2a65f030, type: 3}
---- !u!1 &1435885687 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 263364849307408249, guid: 608dd5936e0350743979045a2a65f030, type: 3}
-  m_PrefabInstance: {fileID: 1407277680}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1435885688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3461209975062031937, guid: 608dd5936e0350743979045a2a65f030, type: 3}

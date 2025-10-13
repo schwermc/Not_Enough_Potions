@@ -21,12 +21,12 @@ public class MakePotion : MonoBehaviour
         {
             for (int j = 0; j < inventory.Container.Count; j++)
             {
-                if (Container[i].item == inventory.Container[j].item)
+                if (Container[i].item == inventory.Container[j].getItem())
                 {
                     // Debug.Log(Container[i].item + " : " + inventory.Container[j].item);
-                    if (Container[i].amount > inventory.Container[j].amount)
+                    if (Container[i].amount > inventory.Container[j].getAmount())
                     {
-                        // Debug.Log(Container[i].amount + " : " + inventory.Container[j].amount);
+                        // Debug.Log(Container[i].amount + " : " + inventory.Container[j].getAmount());
                         return false;
                     }
                     notInList = false;
@@ -34,7 +34,7 @@ public class MakePotion : MonoBehaviour
                 }
                 else
                 {
-                    // Debug.Log(Container[i].item + " : " + inventory.Container[j].item);
+                    // Debug.Log(Container[i].item + " : " + inventory.Container[j].getItem());
                     notInList = true;
                 }
             }
