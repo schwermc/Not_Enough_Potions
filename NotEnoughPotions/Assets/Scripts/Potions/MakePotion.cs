@@ -10,6 +10,13 @@ public class MakePotion : MonoBehaviour
     bool checkList()
     {
         bool notInList = false;
+        int listAmount = 0;
+
+        if (inventory.Container.Count < 1)
+        {
+            return false;
+        }
+
         for (int i = 0; i < Container.Count; i++)
         {
             for (int j = 0; j < inventory.Container.Count; j++)
@@ -23,6 +30,7 @@ public class MakePotion : MonoBehaviour
                         return false;
                     }
                     notInList = false;
+                    listAmount++;
                 }
                 else
                 {
@@ -32,7 +40,7 @@ public class MakePotion : MonoBehaviour
             }
         }
 
-        if (notInList)
+        if (notInList && listAmount != Container.Count)
         {
             return false;
         }
@@ -43,6 +51,7 @@ public class MakePotion : MonoBehaviour
     public void addToInventory(PotionInstance _item, int _amount)
     {
         bool check = checkList();
+        // Debug.Log(check);
         if (check)
         {
             for (int i = 0; i < Container.Count; i++)
