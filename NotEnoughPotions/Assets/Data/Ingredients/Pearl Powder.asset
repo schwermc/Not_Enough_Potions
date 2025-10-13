@@ -16,5 +16,5 @@ MonoBehaviour:
   description: 'While further research is needed, pearl powder is rich in minerals,
     amino acids, and antioxidants and could help bone regeneration '
   type: 3
-  image: {fileID: 0}
+  UIimage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
   model: {fileID: 263364849307408249, guid: 452f6f7a008defa49b5b4397fa8c4e6d, type: 3}
