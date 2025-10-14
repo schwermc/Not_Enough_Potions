@@ -22,11 +22,23 @@ public class PlayerInventory : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        var item = collider.GetComponent<IngredientInstance>();
-        if (item && !item.gotIngredient)
+        if (collider.GetComponent<IngredientInstance>())
         {
-            inventoryObject.AddItem(item.data, 1);
-            item.change();
+            var item = collider.GetComponent<IngredientInstance>();
+            if (item && !item.gotIngredient)
+            {
+                inventoryObject.AddItem(item.data, 1);
+                item.change();
+            }
+        }
+        if (collider.GetComponent<PotionInstance>())
+        {
+            var item = collider.GetComponent<PotionInstance>();
+            var potion = collider.GetComponent<MakePotion>();
+            if (item && !item.gotPotion)
+            {
+                potion.addToInventory(item, 1);
+            }
         }
     }
 

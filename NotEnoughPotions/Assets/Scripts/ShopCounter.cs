@@ -2,25 +2,23 @@ using UnityEngine;
 
 public class ShopCounter : MonoBehaviour
 {
-    public GameObject potion;
-    public LoadScene endDay;
+    public InventoryData inventory;
+    public CustomerCart customerCart;
 
-    void Start() {
-        endDay = GameObject.Find("_GameManager").GetComponent<LoadScene>();
-    }
     public void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Player")
         {
-            potion.SetActive(false);
+            SellPotion(customerCart.Container[0].item, customerCart.Container[0].amount);
         }
     }
 
-    public void Update()
+    void SellPotion(ItemData item, int amount)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        int index = inventory.FindItem(item);
+        if (index >= 0 && inventory.Container[index].amount > 0)
         {
-            endDay.endDay();
+            inventory.SubItem(item, amount);
         }
     }
 }
