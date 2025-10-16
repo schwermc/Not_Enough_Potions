@@ -4,15 +4,25 @@ using UnityEngine;
 public class ShopCounter : MonoBehaviour
 {
     public InventoryData inventory;
-    public CustomerCart customerCart;
+    public GameObject customer;
     public GameObject popUp;
-    private bool sellToCustomer = false;
+    private bool atCounter = false;
+    private bool soldToCurrent = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && sellToCustomer)
+        if (Input.GetKeyDown(KeyCode.C) && atCounter)
         {
-            SellPotion(customerCart.Container[0].item, customerCart.Container[0].amount);
+            SellCart(customer.GetComponent<CustomerCart>());
+        }
+
+        if (atCounter && !soldToCurrent)
+        {
+            popUp.SetActive(true);
+        }
+        if (!atCounter || soldToCurrent)
+        {
+            popUp.SetActive(false);
         }
     }
 
@@ -21,8 +31,7 @@ public class ShopCounter : MonoBehaviour
         if (collider.tag == "Player")
         {
             popUp.GetComponent<TMP_Text>().text = "Press C";
-            popUp.SetActive(true);
-            sellToCustomer = true;
+            atCounter = true;
         }
     }
 
@@ -30,17 +39,73 @@ public class ShopCounter : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            popUp.SetActive(false);
-            sellToCustomer = false;
+            atCounter = false;
         }
     }
 
     void SellPotion(ItemData item, int amount)
     {
         int index = inventory.FindItem(item);
-        if (index >= 0 && inventory.Container[index].amount > 0 && customerCart.soldTo == false)
+        if (index >= 0 && inventory.Container[index].amount > 0)
         {
             inventory.SubItem(item, amount);
         }
+    }
+
+    void SellCart(CustomerCart cart)
+    {
+        bool check = CanSell(cart);
+        // Debug.Log(check);
+        if (!cart.soldTo && check)
+        {
+            for (int i = 0; i < cart.Container.Count; i++)
+            {
+                SellPotion(cart.Container[i].item, cart.Container[i].amount);
+            }
+            soldToCurrent = true;
+            cart.soldTo = true;
+        }
+    }
+
+    bool CanSell(CustomerCart cart)
+    {
+        bool canSellCart = false;
+        int cartAmount = 0;
+
+        if (cart.Container.Count < 1)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < cart.Container.Count; i++)
+        {
+            for (int j = 0; j < inventory.Container.Count; j++)
+            {
+                if (cart.Container[i].item == inventory.Container[j].getItem())
+                {
+                    // Debug.Log(cart.Container[i].item + " : " + inventory.Container[j].item);
+                    if (cart.Container[i].amount > inventory.Container[j].getAmount())
+                    {
+                        // Debug.Log(cart.Container[i].amount + " : " + inventory.Container[j].getAmount());
+                        return false;
+                    }
+                    canSellCart = true;
+                    cartAmount++;
+                }
+
+                if (cart.Container[i].item != inventory.Container[j].getItem())
+                {
+                    // Debug.Log(cart.Container[i].item + " : " + inventory.Container[j].getItem());
+                    canSellCart = false;
+                }
+            }
+        }
+
+        if (!canSellCart && cartAmount != cart.Container.Count)
+        {
+            return false;
+        }
+
+        return true;
     }
 }
