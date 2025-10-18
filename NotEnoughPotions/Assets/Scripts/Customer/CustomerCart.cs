@@ -5,6 +5,7 @@ public class CustomerCart : MonoBehaviour
 {
     public InventoryData inventory;
     public List<CartItem> Container = new List<CartItem>();
+    public bool soldTo = false;
 }
 
 
