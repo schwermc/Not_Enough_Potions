@@ -6,20 +6,27 @@ public class ShopCounter : MonoBehaviour
 {
     public InventoryData inventory;
     public GameObject customer;
-    public GameObject popUp;
+    public GameObject popUpSell;
+    public GameObject popUpRefuse;
     private bool atCounter = false;
     private bool soldToCurrent = false;
     private bool sellCheck = false;
 
+    void Start()
+    {
+        popUpSell.GetComponent<TMP_Text>().text = "Press E to sell";
+        popUpRefuse.GetComponent<TMP_Text>().text = "Press Q to refuse";
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && atCounter && sellCheck && !soldToCurrent)
+        if (Input.GetKeyDown(KeyCode.E) && atCounter && sellCheck && !soldToCurrent)
         {
             SellCart(customer.GetComponent<CustomerCart>());
             customer.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && atCounter && !sellCheck && !soldToCurrent)
+        if (Input.GetKeyDown(KeyCode.Q) && atCounter && !sellCheck && !soldToCurrent)
         {
             customer.SetActive(false);
             soldToCurrent = true;
@@ -27,13 +34,15 @@ public class ShopCounter : MonoBehaviour
 
         if (atCounter && !soldToCurrent)
         {
-            changeUI(popUp.GetComponent<TMP_Text>());
-            popUp.SetActive(true);
+            if (sellCheck)
+                popUpSell.SetActive(true);
+            popUpRefuse.SetActive(true);
         }
         
         if (!atCounter || soldToCurrent || customer.activeSelf == false)
         {
-            popUp.SetActive(false);
+            popUpSell.SetActive(false);
+            popUpRefuse.SetActive(false);
         }
     }
 
@@ -52,14 +61,6 @@ public class ShopCounter : MonoBehaviour
         {
             atCounter = false;
         }
-    }
-
-    void changeUI (TMP_Text text)
-    {
-        if (atCounter && sellCheck)
-            text.text = "Press C to sell";
-        if (atCounter && !sellCheck)
-            text.text = "Press C to refuse";
     }
 
     void SellPotion(ItemData item, int amount)
