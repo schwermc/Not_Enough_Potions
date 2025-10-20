@@ -14,19 +14,19 @@ public class ShopCounter : MonoBehaviour
 
     void Start()
     {
-        popUpSell.GetComponent<TMP_Text>().text = "Press E to sell";
-        popUpRefuse.GetComponent<TMP_Text>().text = "Press Q to refuse";
+        popUpSell.GetComponent<TMP_Text>().text = "Press X to sell";
+        popUpRefuse.GetComponent<TMP_Text>().text = "Press Z to refuse";
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && atCounter && sellCheck && !soldToCurrent)
+        if (Input.GetKeyDown(KeyCode.X) && atCounter && sellCheck && !soldToCurrent)
         {
             SellCart(customer.GetComponent<CustomerCart>());
             customer.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && atCounter && !sellCheck && !soldToCurrent)
+        if (Input.GetKeyDown(KeyCode.Z) && atCounter && !soldToCurrent)
         {
             customer.SetActive(false);
             soldToCurrent = true;
