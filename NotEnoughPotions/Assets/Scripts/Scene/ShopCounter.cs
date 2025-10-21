@@ -1,28 +1,48 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopCounter : MonoBehaviour
 {
     public InventoryData inventory;
     public GameObject customer;
-    public GameObject popUp;
+    public GameObject popUpSell;
+    public GameObject popUpRefuse;
     private bool atCounter = false;
     private bool soldToCurrent = false;
+    private bool sellCheck = false;
+
+    void Start()
+    {
+        popUpSell.GetComponent<TMP_Text>().text = "Press X to sell";
+        popUpRefuse.GetComponent<TMP_Text>().text = "Press Z to refuse";
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && atCounter)
+        if (Input.GetKeyDown(KeyCode.X) && atCounter && sellCheck && !soldToCurrent)
         {
             SellCart(customer.GetComponent<CustomerCart>());
+            customer.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z) && atCounter && !soldToCurrent)
+        {
+            customer.SetActive(false);
+            soldToCurrent = true;
         }
 
         if (atCounter && !soldToCurrent)
         {
-            popUp.SetActive(true);
+            if (sellCheck)
+                popUpSell.SetActive(true);
+            popUpRefuse.SetActive(true);
         }
-        if (!atCounter || soldToCurrent)
+        
+        if (!atCounter || soldToCurrent || customer.activeSelf == false)
         {
-            popUp.SetActive(false);
+            popUpSell.SetActive(false);
+            popUpRefuse.SetActive(false);
         }
     }
 
@@ -30,8 +50,8 @@ public class ShopCounter : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            popUp.GetComponent<TMP_Text>().text = "Press C";
             atCounter = true;
+            sellCheck = CanSell(customer.GetComponent<CustomerCart>());
         }
     }
 
@@ -54,9 +74,7 @@ public class ShopCounter : MonoBehaviour
 
     void SellCart(CustomerCart cart)
     {
-        bool check = CanSell(cart);
-        // Debug.Log(check);
-        if (!cart.soldTo && check)
+        if (!cart.soldTo && sellCheck)
         {
             for (int i = 0; i < cart.Container.Count; i++)
             {
