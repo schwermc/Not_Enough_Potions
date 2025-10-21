@@ -8,6 +8,10 @@ public class ShopCounter : MonoBehaviour
     public List<GameObject> customer = new List<GameObject>();
     public GameObject popUpSell;
     public GameObject popUpRefuse;
+    public bool finishDay = false;
+
+    private TMP_Text sellText;
+    private TMP_Text refuseText;
     private bool atCounter = false;
     private bool soldToCurrent = false;
     private bool sellCheck = false;
@@ -15,8 +19,10 @@ public class ShopCounter : MonoBehaviour
 
     void Start()
     {
-        popUpSell.GetComponent<TMP_Text>().text = "Press X to sell";
-        popUpRefuse.GetComponent<TMP_Text>().text = "Press Z to refuse";
+        sellText = popUpSell.GetComponent<TMP_Text>();
+        sellText.text = "Press X to sell";
+        refuseText = popUpRefuse.GetComponent<TMP_Text>();
+        refuseText.text = "Press Z to refuse";
     }
 
     void Update()
@@ -130,13 +136,18 @@ public class ShopCounter : MonoBehaviour
         atCounter = false;
 
         if (currentCustomer < customer.Count)
-            customer[currentCustomer].SetActive(false);
-        
-        if (currentCustomer < customer.Count - 1)
         {
+            customer[currentCustomer].SetActive(false);
             currentCustomer++;
+        }
+
+        if (currentCustomer < customer.Count)
+        {
             customer[currentCustomer].SetActive(true);
             soldToCurrent = false;
         }
+
+        if (currentCustomer == customer.Count)
+            finishDay = true;
     }
 }

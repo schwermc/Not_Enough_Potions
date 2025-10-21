@@ -2099,6 +2099,7 @@ MonoBehaviour:
   - {fileID: 201814054}
   popUpSell: {fileID: 162615589}
   popUpRefuse: {fileID: 1808001846}
+  finishDay: 0
 --- !u!1 &1270200348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,6 +2863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52b2fcfe65c8f14faea0c41abd26aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishDay: {fileID: 1241255338}
+  endDayUI: {fileID: 1808001846}
 --- !u!4 &1741011730
 Transform:
   m_ObjectHideFlags: 0
