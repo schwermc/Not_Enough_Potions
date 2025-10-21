@@ -1,16 +1,17 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ShopCounter : MonoBehaviour
 {
     public InventoryData inventory;
-    public GameObject customer;
+    public List<GameObject> customer = new List<GameObject>();
     public GameObject popUpSell;
     public GameObject popUpRefuse;
     private bool atCounter = false;
     private bool soldToCurrent = false;
     private bool sellCheck = false;
+    private int currentCustomer = 0;
 
     void Start()
     {
@@ -22,14 +23,13 @@ public class ShopCounter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X) && atCounter && sellCheck && !soldToCurrent)
         {
-            SellCart(customer.GetComponent<CustomerCart>());
-            customer.SetActive(false);
+            SellCart(customer[currentCustomer].GetComponent<CustomerCart>());
+            SwitchCustomer();
         }
 
         if (Input.GetKeyDown(KeyCode.Z) && atCounter && !soldToCurrent)
         {
-            customer.SetActive(false);
-            soldToCurrent = true;
+            SwitchCustomer();
         }
 
         if (atCounter && !soldToCurrent)
@@ -39,7 +39,7 @@ public class ShopCounter : MonoBehaviour
             popUpRefuse.SetActive(true);
         }
         
-        if (!atCounter || soldToCurrent || customer.activeSelf == false)
+        if (!atCounter || soldToCurrent)
         {
             popUpSell.SetActive(false);
             popUpRefuse.SetActive(false);
@@ -51,7 +51,7 @@ public class ShopCounter : MonoBehaviour
         if (collider.tag == "Player")
         {
             atCounter = true;
-            sellCheck = CanSell(customer.GetComponent<CustomerCart>());
+            sellCheck = CanSell(customer[currentCustomer].GetComponent<CustomerCart>());
         }
     }
 
@@ -101,10 +101,8 @@ public class ShopCounter : MonoBehaviour
             {
                 if (cart.Container[i].item == inventory.Container[j].getItem())
                 {
-                    // Debug.Log(cart.Container[i].item + " : " + inventory.Container[j].item);
                     if (cart.Container[i].amount > inventory.Container[j].getAmount())
                     {
-                        // Debug.Log(cart.Container[i].amount + " : " + inventory.Container[j].getAmount());
                         return false;
                     }
                     canSellCart = true;
@@ -113,7 +111,6 @@ public class ShopCounter : MonoBehaviour
 
                 if (cart.Container[i].item != inventory.Container[j].getItem())
                 {
-                    // Debug.Log(cart.Container[i].item + " : " + inventory.Container[j].getItem());
                     canSellCart = false;
                 }
             }
@@ -125,5 +122,21 @@ public class ShopCounter : MonoBehaviour
         }
 
         return true;
+    }
+
+    void SwitchCustomer()
+    {
+        soldToCurrent = true;
+        atCounter = false;
+
+        if (currentCustomer < customer.Count)
+            customer[currentCustomer].SetActive(false);
+        
+        if (currentCustomer < customer.Count - 1)
+        {
+            currentCustomer++;
+            customer[currentCustomer].SetActive(true);
+            soldToCurrent = false;
+        }
     }
 }
