@@ -50,13 +50,15 @@ public class PlayerInventory : MonoBehaviour
             Time.timeScale = 0f;
             inventory.SetActive(active);
             Cursor.lockState = CursorLockMode.None;
+            return;
         }
-        else
+        if (active)
         {
             active = false;
             Time.timeScale = 1f;
             inventory.SetActive(active);
             Cursor.lockState = CursorLockMode.Locked;
+            return;
         }
     }
 
