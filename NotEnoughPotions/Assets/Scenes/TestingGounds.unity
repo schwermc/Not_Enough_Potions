@@ -2867,6 +2867,7 @@ MonoBehaviour:
   popUpSell: {fileID: 162615589}
   popUpRefuse: {fileID: 1808001846}
   finishDay: 0
+  inventoryCheck: {fileID: 1714084241}
 --- !u!1 &1270200348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,6 +3902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finishDay: {fileID: 1241255338}
   endDayUI: {fileID: 1808001846}
+  inventoryCheck: {fileID: 1714084241}
 --- !u!4 &1741011730
 Transform:
   m_ObjectHideFlags: 0

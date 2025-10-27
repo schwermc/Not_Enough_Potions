@@ -7,6 +7,7 @@ public class LoadScene : MonoBehaviour
     public ShopCounter finishDay;
     public GameObject endDayUI;
     private TMP_Text text;
+    [SerializeField] PlayerInventory inventoryCheck;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class LoadScene : MonoBehaviour
         {
             text.text = "Press E to end day";
             endDayUI.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && inventoryCheck.getCheck() == false)
             {
                 endDay();
             }
