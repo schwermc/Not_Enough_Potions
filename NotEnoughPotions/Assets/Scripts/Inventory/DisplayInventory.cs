@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class DisplayInventory : MonoBehaviour
 {
-    public InventoryData inventoryData;
-    public GridLayoutGroup gridLayout;
-    Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    public InventoryData inventory;
+    public Dictionary<InventorySlot, InventoryItem> Container = new Dictionary<InventorySlot, InventoryItem>();
+
+    [SerializeField] GameObject slots;
 
     void Start()
     {
@@ -21,32 +21,32 @@ public class DisplayInventory : MonoBehaviour
 
     public void CreateDisplay()
     {
-        for (int i = 0; i < inventoryData.Container.Count; i++)
+        for (int i = 0; i < inventory.Container.Count; i++)
         {
-            var obj = Instantiate(inventoryData.Container[i].item.UIimage, Vector3.zero, Quaternion.identity, transform);
-            obj.GetComponent<RectTransform>().localPosition = new Vector3();
-            obj.GetComponentInChildren<TextMeshProUGUI>().text = inventoryData.Container[i].amount.ToString("n0");
-            obj.GetComponentInChildren<TextMeshProUGUI>().text = "hello";
-            itemsDisplayed.Add(inventoryData.Container[i], obj);
+            var obj = Instantiate(inventory.Container[i].item.UiImage, Vector3.zero, Quaternion.identity, slots.transform);
+            obj.GetComponent<InventoryItem>().setAmount(inventory.Container[i].getAmount());
+            obj.GetComponent<InventoryItem>().setName(inventory.Container[i].getItem().ingredientName);
+        }
+    }
+    
+    void UpdateDisplay()
+    {
+        
+        for (int i = 0; i < inventory.Container.Count; i++)
+        {
+            if (Container.ContainsKey(inventory.Container[i]))
+            {
+                Container[inventory.Container[i]].setAmount(inventory.Container[i].getAmount());
+            }
+            if (!Container.ContainsKey(inventory.Container[i]))
+            {
+                var obj = Instantiate(inventory.Container[i].item.UiImage, Vector3.zero, Quaternion.identity, slots.transform);
+                obj.GetComponent<InventoryItem>().setAmount(inventory.Container[i].getAmount());
+                obj.GetComponent<InventoryItem>().setName(inventory.Container[i].getItem().ingredientName);
+                Container.Add(inventory.Container[i], obj.GetComponent<InventoryItem>());
+            }
         }
     }
 
-    void UpdateDisplay()
-    {
-        for (int i = 0; i < inventoryData.Container.Count; i++)
-        {
-            if (itemsDisplayed.ContainsKey(inventoryData.Container[i]))
-            {
-                itemsDisplayed[inventoryData.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventoryData.Container[i].amount.ToString("n0");
-            }
-            else
-            {
-                var obj = Instantiate(inventoryData.Container[i].item.UIimage, Vector3.zero, Quaternion.identity, transform);
-                obj.GetComponent<RectTransform>().localPosition = new Vector3();
-                obj.GetComponentInChildren<TextMeshProUGUI>().text = inventoryData.Container[i].amount.ToString("n0");
-                obj.GetComponentInChildren<TextMeshProUGUI>().text = "Jimmy";
-                itemsDisplayed.Add(inventoryData.Container[i], obj);
-            }
-        }
-    }
+
 }

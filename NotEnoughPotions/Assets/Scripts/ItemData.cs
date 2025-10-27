@@ -6,6 +6,6 @@ public class ItemData : ScriptableObject
     [TextArea(15, 10)]
     public string description;
 
-    public GameObject UIimage;
+    public GameObject UiImage;
     public GameObject model;
 }

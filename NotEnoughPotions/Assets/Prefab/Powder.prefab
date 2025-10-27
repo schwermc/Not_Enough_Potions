@@ -121,5 +121,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 71c1af9b72e7b044db3fdb9c4d17e7ab, type: 2}
-  popUpUI: {fileID: 3612801258945605276, guid: 2f34c88001f207c469470eb22f3aa2fd, type: 3}
+  popUpUI: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
   gotIngredient: 0
