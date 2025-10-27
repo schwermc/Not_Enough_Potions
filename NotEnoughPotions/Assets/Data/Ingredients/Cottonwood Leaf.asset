@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d3920e49b3f554b896417002080b07, type: 3}
   m_Name: Cottonwood Leaf
   m_EditorClassIdentifier: 
-  ingredientName: Pearl Powder
+  ingredientName: Cottonwood Leaf
   description: Helps lower fevers, reduce inflammation, and ease general pain
-  type: 0
   UIimage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
   model: {fileID: 0}
+  type: 0
