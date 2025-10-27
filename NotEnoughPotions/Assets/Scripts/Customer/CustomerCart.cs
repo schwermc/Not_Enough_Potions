@@ -12,6 +12,16 @@ public class CustomerCart : MonoBehaviour
 [System.Serializable]
 public class CartItem
 {
-    public ItemData item;
-    public int amount;
+    [SerializeField] ItemData item;
+    [SerializeField] int amount;
+
+    public ItemData getItem()
+    {
+        return item;
+    }
+
+    public int getAmount()
+    {
+        return amount;
+    }
 }

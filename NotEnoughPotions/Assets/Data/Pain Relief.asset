@@ -19,5 +19,6 @@ MonoBehaviour:
 
     Caution! Since the pain will be gone, be careful
     of your health lest you die from blood loss"'
-  UIimage: {fileID: 0}
+  UiImage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
   model: {fileID: 0}
+  type: 0

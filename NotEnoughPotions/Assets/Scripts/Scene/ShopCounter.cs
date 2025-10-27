@@ -84,7 +84,7 @@ public class ShopCounter : MonoBehaviour
         {
             for (int i = 0; i < cart.Container.Count; i++)
             {
-                SellPotion(cart.Container[i].item, cart.Container[i].amount);
+                SellPotion(cart.Container[i].getItem(), cart.Container[i].getAmount());
             }
             soldToCurrent = true;
             cart.soldTo = true;
@@ -105,9 +105,9 @@ public class ShopCounter : MonoBehaviour
         {
             for (int j = 0; j < inventory.Container.Count; j++)
             {
-                if (cart.Container[i].item == inventory.Container[j].getItem())
+                if (cart.Container[i].getItem() == inventory.Container[j].getItem())
                 {
-                    if (cart.Container[i].amount > inventory.Container[j].getAmount())
+                    if (cart.Container[i].getAmount() > inventory.Container[j].getAmount())
                     {
                         return false;
                     }
@@ -115,7 +115,7 @@ public class ShopCounter : MonoBehaviour
                     cartAmount++;
                 }
 
-                if (cart.Container[i].item != inventory.Container[j].getItem())
+                if (cart.Container[i].getItem() != inventory.Container[j].getItem())
                 {
                     canSellCart = false;
                 }
