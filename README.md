@@ -9,8 +9,9 @@ Escape for pause menu <br />
 Delete for pause menu [Debugging purpose] <br />
 
 ## Added
-Player cart list<br />
-Inventory UI<br />
+Player cart list <br />
+Inventory UI <br />
+Item pick up <br />
 
 ## Credits
 **Andy W**: [Inventory System](https://www.youtube.com/watch?v=_IqTeruf3-s) <br />
