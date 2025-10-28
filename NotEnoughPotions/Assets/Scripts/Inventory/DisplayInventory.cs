@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class DisplayInventory : MonoBehaviour
@@ -11,22 +10,12 @@ public class DisplayInventory : MonoBehaviour
 
     void Start()
     {
-        CreateDisplay();
+        UpdateDisplay();
     }
 
     void Update()
     {
         UpdateDisplay();
-    }
-
-    public void CreateDisplay()
-    {
-        for (int i = 0; i < inventory.Container.Count; i++)
-        {
-            var obj = Instantiate(inventory.Container[i].item.UiImage, Vector3.zero, Quaternion.identity, slots.transform);
-            obj.GetComponent<InventoryItem>().setAmount(inventory.Container[i].getAmount());
-            obj.GetComponent<InventoryItem>().setName(inventory.Container[i].getItem().ingredientName);
-        }
     }
     
     void UpdateDisplay()

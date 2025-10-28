@@ -17,6 +17,8 @@ public class ShopCounter : MonoBehaviour
     private bool sellCheck = false;
     private int currentCustomer = 0;
 
+    [SerializeField] PlayerInventory inventoryCheck;
+
     void Start()
     {
         sellText = popUpSell.GetComponent<TMP_Text>();
@@ -27,13 +29,13 @@ public class ShopCounter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && atCounter && sellCheck && !soldToCurrent)
+        if (Input.GetKeyDown(KeyCode.X) && atCounter && sellCheck && !soldToCurrent && !inventoryCheck.getCheck())
         {
             SellCart(customer[currentCustomer].GetComponent<CustomerCart>());
             SwitchCustomer();
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) && atCounter && !soldToCurrent)
+        if (Input.GetKeyDown(KeyCode.Z) && atCounter && !soldToCurrent && !inventoryCheck.getCheck())
         {
             SwitchCustomer();
         }

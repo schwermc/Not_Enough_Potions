@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private CharacterController _controller;
     private bool active = false;
     public GameObject inventory;
     public InventoryData inventoryObject;
-
-    void Awake()
-    {
-        _controller = gameObject.GetComponent<CharacterController>();
-    }
 
     void Update()
     {
@@ -42,7 +36,7 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    void updateUI()
+    public void updateUI()
     {
         if (!active)
         {
@@ -65,5 +59,10 @@ public class PlayerInventory : MonoBehaviour
     void OnApplicationQuit()
     {
         inventoryObject.Container.Clear();
+    }
+
+    public bool getCheck()
+    {
+        return active;
     }
 }
