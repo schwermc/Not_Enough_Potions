@@ -8,6 +8,8 @@ public class MouseSensitivity : MonoBehaviour
     public TMP_InputField _input;
     public MouseLook mouse;
 
+    [SerializeField] Settings setting;
+
     private float maxValue;
     private float currentValue;
     private float minValue;
@@ -15,10 +17,11 @@ public class MouseSensitivity : MonoBehaviour
     void Start()
     {
         maxValue = _slider.maxValue;
-        currentValue = _slider.value;
+        currentValue = setting.getDIP();
         minValue = _slider.minValue;
 
-        _input.text = currentValue.ToString();
+        _slider.value = currentValue;
+        _input.text = currentValue.ToString("F0");
     }
 
     public void OnInputChange()

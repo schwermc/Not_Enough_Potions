@@ -1921,7 +1921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7ec294bad9bcb44bd2ff189d7e44de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1500
+  setting: {fileID: 11400000, guid: 4209b7790a53fa14cb4a84bb3bb59087, type: 2}
   playerBody: {fileID: 1714084239}
 --- !u!1 &968863522
 GameObject:
@@ -3947,6 +3947,7 @@ MonoBehaviour:
   _slider: {fileID: 349544125}
   _input: {fileID: 1548692739}
   mouse: {fileID: 963194229}
+  setting: {fileID: 11400000, guid: 4209b7790a53fa14cb4a84bb3bb59087, type: 2}
 --- !u!1001 &1743171001
 PrefabInstance:
   m_ObjectHideFlags: 0
