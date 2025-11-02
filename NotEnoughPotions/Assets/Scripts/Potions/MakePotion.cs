@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MakePotion : MonoBehaviour
 {
@@ -6,6 +8,31 @@ public class MakePotion : MonoBehaviour
     public InventoryData inventory;
 
     private bool check;
+    private PotionItem buttonText;
+
+    [SerializeField] private PotionData data;
+
+    [SerializeField] PotionStationData stationData;
+
+    void Start()
+    {
+        buttonText = GetComponent<PotionItem>();
+        for (int i = 0; i < stationData.Container.Count; i++)
+        {
+            if (buttonText.getName().text == stationData.Container[i].name)
+            {
+                data = stationData.Container[i];
+            }
+        }
+    }
+
+    public void potionButton()
+    {
+        if (data != null)
+        {
+            addToInventory(data, 1);
+        }
+    }
 
     bool checkList(PotionData potion)
     {
@@ -23,20 +50,15 @@ public class MakePotion : MonoBehaviour
             {
                 if (potion.Ingredients[i].item == inventory.Container[j].getItem())
                 {
-                    Debug.Log(potion.Ingredients[i].item + " : " + inventory.Container[j].item);
                     if (potion.Ingredients[i].amount > inventory.Container[j].getAmount())
                     {
-                        Debug.Log(potion.Ingredients[i].amount + " : " + inventory.Container[j].getAmount());
                         return false;
                     }
                     notInList = false;
                     listAmount++;
+                    continue;
                 }
-                else
-                {
-                    Debug.Log(potion.Ingredients[i].item + " : " + inventory.Container[j].getItem());
-                    notInList = true;
-                }
+                notInList = true;
             }
         }
 
@@ -48,7 +70,7 @@ public class MakePotion : MonoBehaviour
         return true;
     }
 
-    public void addToInventory(PotionData potion, PotionInstance _item, int _amount)
+    public void addToInventory(PotionData potion, int _amount)
     {
         check = checkList(potion);
         if (check)
@@ -57,8 +79,7 @@ public class MakePotion : MonoBehaviour
             {
                 inventory.SubItem(potion.Ingredients[i].item, potion.Ingredients[i].amount);
             }
-            inventory.AddItem(_item.data, _amount);
-            _item.change();
+            inventory.AddItem(potion, _amount);
         }
     }
 

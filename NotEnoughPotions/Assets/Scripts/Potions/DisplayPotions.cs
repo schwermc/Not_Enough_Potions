@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DisplayPotions : MonoBehaviour
@@ -12,14 +10,6 @@ public class DisplayPotions : MonoBehaviour
     void Start()
     {
         CreateDisplay();
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && collision)
-        {
-
-        }
     }
 
     public void SetCollision(bool boolean)

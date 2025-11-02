@@ -39,16 +39,6 @@ public class ItemInteraction : MonoBehaviour
                 check = true;
             }
         }
-        if (this.GetComponent<PotionInstance>())
-        {
-            var item = this.GetComponent<PotionInstance>();
-            var potion = this.GetComponent<MakePotion>();
-            if (item && !item.gotPotion)
-            {
-                potion.addToInventory(item.data, item, 1);
-                check = potion.getCheck();
-            }
-        }
         
         if (check)
             popUp.SetActive(false);
