@@ -4,6 +4,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] PlayerInventory playerInventory;
+    [SerializeField] PotionStationData potionStationData;
     private bool isGamePause = false;
 
     void Update()
@@ -20,6 +21,14 @@ public class PauseMenu : MonoBehaviour
         {
             if (playerInventory.getCheck())
                 playerInventory.updateUI();
+            Cursor.lockState = CursorLockMode.Locked;
+            return;
+        }
+
+        if (!isGamePause && potionStationData.getCheck())
+        {
+            if (potionStationData.getCheck())
+                potionStationData.updateUI();
             Cursor.lockState = CursorLockMode.Locked;
             return;
         }

@@ -7,5 +7,4 @@ public class ItemData : ScriptableObject
     public string description;
 
     public GameObject UiImage;
-    public GameObject model;
 }

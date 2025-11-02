@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class PotionInstance : MonoBehaviour
 {
-    public PotiontData data;
-    public GameObject popUpUI;
+    public PotionData data;
 
     private string m_description;
     private string m_name;
@@ -20,13 +19,18 @@ public class PotionInstance : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();
     }
 
-    public void change() {
+    public void change()
+    {
         if (_mesh == true)
         {
             mesh.enabled = false;
             _mesh = false;
-            // Debug.Log(m_name + " mesh off");
             gotPotion = true;
         }
+    }
+    
+    public string getName()
+    {
+        return name;
     }
 }

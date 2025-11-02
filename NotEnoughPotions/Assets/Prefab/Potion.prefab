@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3240504244987824329}
   - component: {fileID: 7149559430843879399}
   - component: {fileID: 7094458587958426638}
-  - component: {fileID: 1759855990661621458}
   - component: {fileID: 1924401317476601556}
   m_Layer: 0
   m_Name: Potion
@@ -124,22 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: d3d7e98fe110598479860e37051ebc28, type: 2}
-  popUpUI: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
   gotPotion: 0
---- !u!114 &1759855990661621458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263364849307408249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66af6152877393d4b859cc47214fcda9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
-  Container: []
 --- !u!114 &1924401317476601556
 MonoBehaviour:
   m_ObjectHideFlags: 0
