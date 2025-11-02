@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class DisplayInventory : MonoBehaviour
 {
-    public InventoryData inventory;
-    public Dictionary<InventorySlot, InventoryItem> Container = new Dictionary<InventorySlot, InventoryItem>();
-
+    [SerializeField] InventoryData inventory;
+    [SerializeField] Dictionary<InventorySlot, InventoryItem> Container = new Dictionary<InventorySlot, InventoryItem>();
     [SerializeField] GameObject slots;
 
     void Start()
@@ -20,7 +19,6 @@ public class DisplayInventory : MonoBehaviour
     
     void UpdateDisplay()
     {
-        
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             if (Container.ContainsKey(inventory.Container[i]))
@@ -36,6 +34,5 @@ public class DisplayInventory : MonoBehaviour
             }
         }
     }
-
 
 }

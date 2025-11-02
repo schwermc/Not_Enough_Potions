@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class ItemInteraction : MonoBehaviour
 {
@@ -29,6 +28,7 @@ public class ItemInteraction : MonoBehaviour
 
     void pickedUp()
     {
+        bool check = false;
         if (this.GetComponent<IngredientInstance>())
         {
             var item = this.GetComponent<IngredientInstance>();
@@ -36,6 +36,7 @@ public class ItemInteraction : MonoBehaviour
             {
                 inventoryObject.AddItem(item.data, 1);
                 item.change();
+                check = true;
             }
         }
         if (this.GetComponent<PotionInstance>())
@@ -44,9 +45,12 @@ public class ItemInteraction : MonoBehaviour
             var potion = this.GetComponent<MakePotion>();
             if (item && !item.gotPotion)
             {
-                potion.addToInventory(item, 1);
+                potion.addToInventory(item.data, item, 1);
+                check = potion.getCheck();
             }
         }
-        popUp.SetActive(false);
+        
+        if (check)
+            popUp.SetActive(false);
     }
 }

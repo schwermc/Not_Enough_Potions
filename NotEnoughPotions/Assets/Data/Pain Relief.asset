@@ -20,5 +20,10 @@ MonoBehaviour:
     Caution! Since the pain will be gone, be careful
     of your health lest you die from blood loss"'
   UiImage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
-  model: {fileID: 0}
+  StationUiImage: {fileID: 8334269598078536416, guid: ed1ed86cb51c00247ae2171db817f174, type: 3}
   type: 0
+  Ingredients:
+  - item: {fileID: 11400000, guid: 71c1af9b72e7b044db3fdb9c4d17e7ab, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 90ac66f397cbaa945a47f7c01db01f41, type: 2}
+    amount: 1
