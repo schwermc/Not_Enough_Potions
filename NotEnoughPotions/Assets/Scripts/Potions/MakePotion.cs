@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,20 +8,35 @@ public class MakePotion : MonoBehaviour
 
     private bool check;
     private PotionItem buttonText;
+    private Button button;
 
     [SerializeField] private PotionData data;
-
     [SerializeField] PotionStationData stationData;
 
     void Start()
     {
         buttonText = GetComponent<PotionItem>();
+        button = GetComponent<Button>();
         for (int i = 0; i < stationData.Container.Count; i++)
         {
             if (buttonText.getName().text == stationData.Container[i].name)
             {
                 data = stationData.Container[i];
             }
+        }
+    }
+
+    void Update()
+    {
+        check = checkList(data);
+        if (check)
+        {
+            button.interactable = true;
+        }
+
+        if (!check)
+        {
+            button.interactable = false;
         }
     }
 
@@ -72,7 +86,6 @@ public class MakePotion : MonoBehaviour
 
     public void addToInventory(PotionData potion, int _amount)
     {
-        check = checkList(potion);
         if (check)
         {
             for (int i = 0; i < potion.Ingredients.Count; i++)

@@ -7,7 +7,8 @@ public class PotionStationData : MonoBehaviour
 
     private DisplayPotions displayPotions;
     private bool active = false;
-    
+
+    [SerializeField] PlayerInventory inventory;
     [SerializeField] GameObject potionUI;
 
     void Start()
@@ -19,6 +20,8 @@ public class PotionStationData : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && displayPotions.GetCollision())
         {
+            if (inventory.getCheck()) 
+                inventory.updateUI();
             updateUI();
         }
     }

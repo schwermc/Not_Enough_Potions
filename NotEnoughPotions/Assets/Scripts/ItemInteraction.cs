@@ -19,11 +19,13 @@ public class ItemInteraction : MonoBehaviour
     void OnTriggerEnter()
     {
         inTrigger = true;
+        popUp.SetActive(true);
     }
 
     void OnTriggerExit()
     {
         inTrigger = false;
+        popUp.SetActive(false);
     }
 
     void pickedUp()
