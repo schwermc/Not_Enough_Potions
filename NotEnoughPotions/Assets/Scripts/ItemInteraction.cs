@@ -19,11 +19,13 @@ public class ItemInteraction : MonoBehaviour
     void OnTriggerEnter()
     {
         inTrigger = true;
+        popUp.SetActive(true);
     }
 
     void OnTriggerExit()
     {
         inTrigger = false;
+        popUp.SetActive(false);
     }
 
     void pickedUp()
@@ -37,16 +39,6 @@ public class ItemInteraction : MonoBehaviour
                 inventoryObject.AddItem(item.data, 1);
                 item.change();
                 check = true;
-            }
-        }
-        if (this.GetComponent<PotionInstance>())
-        {
-            var item = this.GetComponent<PotionInstance>();
-            var potion = this.GetComponent<MakePotion>();
-            if (item && !item.gotPotion)
-            {
-                potion.addToInventory(item.data, item, 1);
-                check = potion.getCheck();
             }
         }
         

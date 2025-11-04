@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 1112532757148898781}
   - component: {fileID: 3633330892470699041}
   - component: {fileID: 2807050032536516214}
+  - component: {fileID: 6539534116121395663}
   m_Layer: 5
   m_Name: PotionUI
   m_TagString: Untagged
@@ -255,7 +256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1112532757148898781}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6539534116121395663}
+        m_TargetAssemblyTypeName: MakePotion, Assembly-CSharp
+        m_MethodName: potionButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2807050032536516214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,3 +282,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 2657639440886990517}
+--- !u!114 &6539534116121395663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334269598078536416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66af6152877393d4b859cc47214fcda9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
+  data: {fileID: 0}
+  stationData: {fileID: 7081217589621694682, guid: 516fc5dbe73be0f4086e2a57e825357c, type: 3}

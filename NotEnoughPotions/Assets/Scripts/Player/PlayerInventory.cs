@@ -4,12 +4,15 @@ public class PlayerInventory : MonoBehaviour
 {
     private bool active = false;
     [SerializeField] GameObject inventory;
+    [SerializeField] PotionStationData station;
     [SerializeField] InventoryData inventoryObject;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
+            if (station.getCheck())
+                station.updateUI();
             updateUI();
         }
     }

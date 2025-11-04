@@ -9,7 +9,6 @@ public class PotionInstance : MonoBehaviour
     private PotionType m_type;
     private MeshRenderer mesh;
     private bool _mesh = true;
-    public bool gotPotion = false;
 
     public void Start()
     {
@@ -19,14 +18,9 @@ public class PotionInstance : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();
     }
 
-    public void change()
+    public void SetData(PotionData data)
     {
-        if (_mesh == true)
-        {
-            mesh.enabled = false;
-            _mesh = false;
-            gotPotion = true;
-        }
+        this.data = data;
     }
     
     public string getName()

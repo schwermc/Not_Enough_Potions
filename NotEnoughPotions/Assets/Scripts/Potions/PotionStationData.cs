@@ -8,7 +8,7 @@ public class PotionStationData : MonoBehaviour
     private DisplayPotions displayPotions;
     private bool active = false;
 
-    [SerializeField] MakePotion ingredients;
+    [SerializeField] PlayerInventory inventory;
     [SerializeField] GameObject potionUI;
 
     void Start()
@@ -20,6 +20,8 @@ public class PotionStationData : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && displayPotions.GetCollision())
         {
+            if (inventory.getCheck()) 
+                inventory.updateUI();
             updateUI();
         }
     }
@@ -52,14 +54,6 @@ public class PotionStationData : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             return;
         }
-    }
-
-    void makePotion()
-    {
-        var item = this.GetComponent<PotionInstance>();
-        var potion = this.GetComponent<MakePotion>();
-        if (item && !item.gotPotion)
-            potion.addToInventory(item.data, item, 1);
     }
 
     public bool getCheck()
