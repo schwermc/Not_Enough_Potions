@@ -6,9 +6,8 @@ public class WeekCounter : MonoBehaviour
 
     public void UpdateWeek()
     {
-        if (weekCounter <= 7)
-            weekCounter++;
-        if (7 < weekCounter)
+        weekCounter++;
+        if (weekCounter > 7)
             weekCounter = 1;
     }
 

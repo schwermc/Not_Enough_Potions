@@ -32,17 +32,9 @@ public class LoadScene : MonoBehaviour
 
     private bool GetCheck()
     {
-        bool check = false;
-        int checks = 0;
-        if (inventoryCheck.getCheck() == false)
-            checks++;
-        if (potionStationData.getCheck() == false)
-            checks++;
-        if (pauseMenu.getCheck() == false)
-            checks++;
-        if (checks == 3)
-            check = true;
-        return check;
+        if (inventoryCheck.getCheck() || potionStationData.getCheck() || pauseMenu.getCheck())
+            return false;
+        return true;
     }
     private void endDay()
     {
