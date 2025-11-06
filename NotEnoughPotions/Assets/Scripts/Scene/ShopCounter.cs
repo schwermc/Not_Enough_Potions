@@ -56,7 +56,7 @@ public class ShopCounter : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Player")
+        if (collider.tag == "Player" && currentCustomer < customer.Count)
         {
             atCounter = true;
             sellCheck = CanSell(customer[currentCustomer].GetComponent<CustomerCart>());

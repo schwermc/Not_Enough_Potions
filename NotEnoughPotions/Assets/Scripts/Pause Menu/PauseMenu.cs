@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Delete))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             PauseGame();
         }
@@ -48,9 +48,14 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             isGamePause = false;
             pauseMenu.SetActive(false);
-            playerInventory.enabled = true;            
+            playerInventory.enabled = true;
             Time.timeScale = 1f;
             return;
         }
+    }
+    
+    public bool getCheck()
+    {
+        return isGamePause;
     }
 }
