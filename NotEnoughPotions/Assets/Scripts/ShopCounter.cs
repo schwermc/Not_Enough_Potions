@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ShopCounter : MonoBehaviour
 {
-    public InventoryData inventory;
-    public List<GameObject> customer = new List<GameObject>();
-    public GameObject popUpSell;
-    public GameObject popUpRefuse;
     public bool finishDay = false;
 
     private TMP_Text sellText;
@@ -19,6 +15,11 @@ public class ShopCounter : MonoBehaviour
 
     private const string playerTag = "Player";
 
+    [SerializeField] InventoryData inventory;
+    [SerializeField] Money money;
+    [SerializeField] List<GameObject> customer = new List<GameObject>();
+    [SerializeField] GameObject popUpSell;
+    [SerializeField] GameObject popUpRefuse;
     [SerializeField] PlayerInventory inventoryCheck;
 
     void Start()
@@ -79,7 +80,9 @@ public class ShopCounter : MonoBehaviour
         if (index >= 0 && inventory.Container[index].amount > 0)
         {
             inventory.SubItem(item, amount);
+            money.AddGold(item.sellAmount);
         }
+        money.updateGold();
     }
 
     void SellCart(CustomerCart cart)

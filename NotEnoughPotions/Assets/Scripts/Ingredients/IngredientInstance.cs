@@ -21,12 +21,7 @@ public class IngredientInstance : MonoBehaviour
     }
 
     public void change() {
-        if (_mesh == true)
-        {
-            mesh.enabled = false;
-            _mesh = false;
-            // Debug.Log(m_name + " mesh off");
-            gotIngredient = true;
-        }
+        if (transform != null)
+            Destroy(transform.gameObject);
     }
 }
