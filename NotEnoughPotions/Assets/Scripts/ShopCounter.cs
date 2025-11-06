@@ -17,6 +17,8 @@ public class ShopCounter : MonoBehaviour
     private bool sellCheck = false;
     private int currentCustomer = 0;
 
+    private const string playerTag = "Player";
+
     [SerializeField] PlayerInventory inventoryCheck;
 
     void Start()
@@ -56,7 +58,7 @@ public class ShopCounter : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Player")
+        if (collider.tag == playerTag && currentCustomer < customer.Count)
         {
             atCounter = true;
             sellCheck = CanSell(customer[currentCustomer].GetComponent<CustomerCart>());
@@ -65,7 +67,7 @@ public class ShopCounter : MonoBehaviour
 
     public void OnTriggerExit(Collider collider)
     {
-        if (collider.tag == "Player")
+        if (collider.tag == playerTag)
         {
             atCounter = false;
         }

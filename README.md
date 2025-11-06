@@ -5,14 +5,14 @@
 WASD for Movement <br />
 Mouse to look around <br />
 I for player inventory <br />
-Escape for pause menu <br />
-Delete for pause menu [Debugging purpose] <br />
-E at the potion station <br />
+P for pause menu <br />
+E at the potion station  <br />
 
 ## Added
-Add physical potion station <br />
-Add potion station UI <br />
-Made shop building <br />
+Add weekly counter <br />
+
+## Update
+Changed pause mune keybind from Escape & Delete to P <br />
 
 ## Credits
 **Andy W**: [Inventory System](https://www.youtube.com/watch?v=_IqTeruf3-s) <br />

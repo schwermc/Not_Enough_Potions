@@ -4204,6 +4204,7 @@ GameObject:
   - component: {fileID: 1741011729}
   - component: {fileID: 1741011731}
   - component: {fileID: 1741011732}
+  - component: {fileID: 1741011733}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -4225,7 +4226,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finishDay: {fileID: 1241255338}
   endDayUI: {fileID: 1808001846}
+  weekCounter: {fileID: 1741011733}
   inventoryCheck: {fileID: 1714084241}
+  potionStationData: {fileID: 361403658}
+  pauseMenu: {fileID: 1741011731}
 --- !u!4 &1741011730
 Transform:
   m_ObjectHideFlags: 0
@@ -4272,6 +4276,18 @@ MonoBehaviour:
   _input: {fileID: 1548692739}
   mouse: {fileID: 963194229}
   setting: {fileID: 11400000, guid: 4209b7790a53fa14cb4a84bb3bb59087, type: 2}
+--- !u!114 &1741011733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741011728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab5fa17f445fe14f976147df24c4eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1743171001
 PrefabInstance:
   m_ObjectHideFlags: 0
