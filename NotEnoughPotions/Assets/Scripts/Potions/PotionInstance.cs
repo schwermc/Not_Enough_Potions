@@ -8,7 +8,6 @@ public class PotionInstance : MonoBehaviour
     private string m_name;
     private PotionType m_type;
     private MeshRenderer mesh;
-    private bool _mesh = true;
 
     public void Start()
     {

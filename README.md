@@ -10,9 +10,11 @@ E at the potion station  <br />
 
 ## Added
 Add weekly counter <br />
+Add gold currency <br />
+Add a win condition <br />
 
 ## Update
-Changed pause mune keybind from Escape & Delete to P <br />
+Changed pause menu key bind from Escape & Delete to P <br />
 
 ## Credits
 **Andy W**: [Inventory System](https://www.youtube.com/watch?v=_IqTeruf3-s) <br />

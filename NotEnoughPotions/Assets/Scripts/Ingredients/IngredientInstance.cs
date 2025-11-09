@@ -9,7 +9,6 @@ public class IngredientInstance : MonoBehaviour
     private string m_name;
     private IngredientType m_type;
     private MeshRenderer mesh;
-    private bool _mesh = true;
     public bool gotIngredient = false;
 
     public void Start()
