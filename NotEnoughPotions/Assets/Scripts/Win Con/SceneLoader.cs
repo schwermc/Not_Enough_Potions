@@ -1,20 +1,30 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour
+using System;
+
+public class SceneLoader : MonoBehaviour
 {
     public ShopCounter finishDay;
     public GameObject endDayUI;
+
     private TMP_Text text;
+    private EndCondition endCondition;
+    private LoadScene loadScene;
+
+    [Header("SerializeField")]
+    [SerializeField] string sceneName;
     [SerializeField] WeekCounter weekCounter;
     [SerializeField] PlayerInventory inventoryCheck;
     [SerializeField] PotionStationData potionStationData;
     [SerializeField] PauseMenu pauseMenu;
+    [SerializeField] Money money;
 
     void Start()
     {
         text = endDayUI.GetComponent<TMP_Text>();
+        endCondition = new EndCondition();
+        loadScene = new LoadScene();
     }
 
     public void Update()
@@ -25,9 +35,23 @@ public class LoadScene : MonoBehaviour
             endDayUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.N) && GetCheck())
             {
-                endDay();
+                endDay(sceneName);
             }
         }
+    }
+
+    public void endDay(String name)
+    {
+        if (weekCounter.GetWeekCounter() <= 7)
+            weekCounter.UpdateWeek();
+
+        if (weekCounter.GetCurrentWeek() > 0)
+        {
+            name = endCondition.GetSceneName();
+            endCondition.SetGameWon(money.HaveEnoughGold());
+        }
+
+        loadScene.loadScene(name);
     }
 
     private bool GetCheck()
@@ -35,10 +59,5 @@ public class LoadScene : MonoBehaviour
         if (inventoryCheck.getCheck() || potionStationData.getCheck() || pauseMenu.getCheck())
             return false;
         return true;
-    }
-    private void endDay()
-    {
-        weekCounter.UpdateWeek();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
