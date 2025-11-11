@@ -1,20 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using TMPro;
 
-public class MakePotion : MonoBehaviour
+public class MakePotion : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-
     public InventoryData inventory;
 
     private bool check;
     private PotionItem buttonText;
     private Button button;
+    private TMP_Text hoverText;
 
     [SerializeField] private PotionData data;
     [SerializeField] PotionStationData stationData;
+    [SerializeField] GameObject hoverPopup;
+
+    void Awake()
+    {
+        hoverPopup = transform.parent.parent.parent.Find("Hover").gameObject;
+    }
 
     void Start()
     {
+        hoverPopup.SetActive(false);
+
         buttonText = GetComponent<PotionItem>();
         button = GetComponent<Button>();
         for (int i = 0; i < stationData.Container.Count; i++)
@@ -24,6 +34,8 @@ public class MakePotion : MonoBehaviour
                 data = stationData.Container[i];
             }
         }
+
+        hoverText = hoverPopup.GetComponentInChildren<TMP_Text>();
     }
 
     void Update()
@@ -38,6 +50,17 @@ public class MakePotion : MonoBehaviour
         {
             button.interactable = false;
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        hoverPopup.SetActive(true);
+        hoverText.text = data.ListIngredients();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        hoverPopup.SetActive(false);
     }
 
     public void potionButton()
