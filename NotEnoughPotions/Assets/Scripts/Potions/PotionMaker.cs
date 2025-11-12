@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class MakePotion : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public InventoryData inventory;
 
@@ -12,13 +12,14 @@ public class MakePotion : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private Button button;
     private TMP_Text hoverText;
 
-    [SerializeField] private PotionData data;
+    [SerializeField] string hoverName = "Hover";
+    [SerializeField] PotionData potionData;
     [SerializeField] PotionStationData stationData;
     [SerializeField] GameObject hoverPopup;
 
     void Awake()
     {
-        hoverPopup = transform.parent.parent.parent.Find("Hover").gameObject;
+        hoverPopup = transform.parent.parent.parent.Find(hoverName).gameObject;
     }
 
     void Start()
@@ -31,7 +32,7 @@ public class MakePotion : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         {
             if (buttonText.getName().text == stationData.Container[i].name)
             {
-                data = stationData.Container[i];
+                potionData = stationData.Container[i];
             }
         }
 
@@ -40,7 +41,7 @@ public class MakePotion : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void Update()
     {
-        check = checkList(data);
+        check = checkList(potionData);
         if (check)
         {
             button.interactable = true;
@@ -55,7 +56,7 @@ public class MakePotion : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         hoverPopup.SetActive(true);
-        hoverText.text = data.ListIngredients();
+        hoverText.text = potionData.ListIngredients();
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -65,9 +66,9 @@ public class MakePotion : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void potionButton()
     {
-        if (data != null)
+        if (potionData != null)
         {
-            addToInventory(data, 1);
+            addToInventory(potionData, 1);
         }
     }
 
