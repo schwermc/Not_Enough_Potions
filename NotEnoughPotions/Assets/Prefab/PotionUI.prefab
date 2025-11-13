@@ -297,3 +297,4 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
   data: {fileID: 0}
   stationData: {fileID: 7081217589621694682, guid: 516fc5dbe73be0f4086e2a57e825357c, type: 3}
+  hoverPopup: {fileID: 3153244181017706149, guid: 5876221c3036fa34fa3bef1867d13f1e, type: 3}

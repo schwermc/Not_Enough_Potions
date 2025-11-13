@@ -12,6 +12,7 @@ E at the potion station  <br />
 Add weekly counter <br />
 Add gold currency <br />
 Add a win condition <br />
+Add a popup to the potion station with what ingredients are needed <br />
 
 ## Update
 Changed pause menu key bind from Escape & Delete to P <br />

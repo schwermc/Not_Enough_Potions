@@ -174,4 +174,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Container:
   - {fileID: 11400000, guid: d3d7e98fe110598479860e37051ebc28, type: 2}
+  inventory: {fileID: 0}
   potionUI: {fileID: 0}
