@@ -1072,11 +1072,11 @@ GameObject:
   - component: {fileID: 397223805}
   m_Layer: 5
   m_Name: Hover
-  m_TagString: Untagged
+  m_TagString: HoverPopup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &397223804
 RectTransform:
   m_ObjectHideFlags: 0

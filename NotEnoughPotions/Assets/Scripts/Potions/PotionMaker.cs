@@ -12,14 +12,13 @@ public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private Button button;
     private TMP_Text hoverText;
 
-    [SerializeField] string hoverName = "Hover";
     [SerializeField] PotionData potionData;
     [SerializeField] PotionStationData stationData;
     [SerializeField] GameObject hoverPopup;
 
     void Awake()
     {
-        hoverPopup = transform.parent.parent.parent.Find(hoverName).gameObject;
+        hoverPopup = GameObject.FindGameObjectWithTag("HoverPopup");
     }
 
     void Start()
