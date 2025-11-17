@@ -10,6 +10,7 @@ public class EndText : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         endCondition = new EndCondition();
         loadScene = new LoadScene();
         if (endCondition.GetGameWon())
