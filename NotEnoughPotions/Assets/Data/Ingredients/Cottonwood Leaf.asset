@@ -17,3 +17,4 @@ MonoBehaviour:
   sellAmount: 7
   UiImage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
   type: 0
+  HarvestAmount: 2

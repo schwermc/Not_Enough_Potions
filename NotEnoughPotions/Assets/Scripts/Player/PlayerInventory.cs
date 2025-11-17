@@ -5,7 +5,8 @@ public class PlayerInventory : MonoBehaviour
     private bool active = false;
     [SerializeField] GameObject inventory;
     [SerializeField] PotionStationData station;
-    [SerializeField] InventoryData inventoryObject;
+    [SerializeField] InventoryData playerInventory;
+    [SerializeField] InventoryData startingInventory;
 
     void Update()
     {
@@ -39,7 +40,11 @@ public class PlayerInventory : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        inventoryObject.Container.Clear();
+        playerInventory.Container.Clear();
+        for (int i = 0; i < startingInventory.Container.Count; i++)
+        {
+            playerInventory.Container.Add(startingInventory.Container[i]);
+        }
     }
 
     public bool getCheck()

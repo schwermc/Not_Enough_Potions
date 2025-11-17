@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 475c64bd2e7ddf84b9b1160b7d6d6a15
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inventoryObject: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
+  - gardenList: {instanceID: 0}
+  - plant: {instanceID: 0}
+  - notGrown: {fileID: 2100000, guid: d015659c719848a42999facc4c73abe8, type: 2}
+  - isGrown: {fileID: 2100000, guid: 6e9fd8eab23527344984b92ceb3d00f8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
