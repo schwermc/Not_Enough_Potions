@@ -419,8 +419,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  inventoryObject: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
   popup: {fileID: 135597436236829759}
+  inventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
+  _material: {fileID: 3342335361866886105}
   gardenList: {fileID: 0}
   gardenData: {fileID: 0}
   notPlanted: {fileID: 2100000, guid: 36b6a8f1788931b45a2d6cf850f6a1b3, type: 2}

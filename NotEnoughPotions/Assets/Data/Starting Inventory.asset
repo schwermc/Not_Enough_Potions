@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce1a43e02591307479ab349c872b5234, type: 3}
-  m_Name: Garden 3
+  m_Script: {fileID: 11500000, guid: d4f7a3008261a0846926f42b3fdef89d, type: 3}
+  m_Name: Starting Inventory
   m_EditorClassIdentifier: 
-  isPlanted: 0
-  isGrown: 0
-  plant: {fileID: 11400000, guid: 3c2c555f8d9248d46b17cc6500ad62b8, type: 2}
+  Container:
+  - item: {fileID: 11400000, guid: 3c2c555f8d9248d46b17cc6500ad62b8, type: 2}
+    amount: 1

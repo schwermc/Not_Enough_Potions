@@ -4,6 +4,7 @@ using UnityEngine;
 public class IngredientData : ItemData
 {
     public IngredientType type;
+    public int HarvestAmount = 1;
 }
 
 public enum IngredientType
