@@ -1,11 +1,14 @@
+using TMPro;
 using UnityEngine;
 
 public class GardenPlanter : MonoBehaviour
 {
     private bool atPot = false;
+    private TextMeshProUGUI plantText;
 
     [SerializeField] string playerTag;
-    [SerializeField] GameObject popup;
+    [SerializeField] GameObject interactionPopup;
+    [SerializeField] GameObject plantPopup;
     [SerializeField] InventoryData inventory;
 
     [Header("Garden Pot")]
@@ -18,17 +21,21 @@ public class GardenPlanter : MonoBehaviour
 
     void Start()
     {
-        popup.SetActive(false);
+        interactionPopup.SetActive(false);
         if (gardenData.IsPlanted())
         {
             gardenData.IsGrown(true);
         }
         setGrown();
+        plantText = plantPopup.GetComponent<TextMeshProUGUI>();
+        SetPlantText();
+        plantPopup.SetActive(true);
     }
 
     void Update()
     {
-        popup.transform.rotation = Quaternion.LookRotation(popup.transform.position - Camera.main.transform.position);
+        interactionPopup.transform.rotation = Quaternion.LookRotation(interactionPopup.transform.position - Camera.main.transform.position);
+        plantPopup.transform.rotation = Quaternion.LookRotation(plantPopup.transform.position - Camera.main.transform.position);
 
         if (Input.GetKeyDown(KeyCode.E) && Planted(gardenData.IsPlanted()))
         {
@@ -39,6 +46,12 @@ public class GardenPlanter : MonoBehaviour
         {
             gardenData.harvestPlant(inventory);
             setGrown();
+            SetPlantText();
+        }
+
+        if (gardenData.IsPlanted() && !gardenData.IsGrown())
+        {
+            interactionPopup.SetActive(false);
         }
     }
 
@@ -46,8 +59,9 @@ public class GardenPlanter : MonoBehaviour
     {
         if (collider.tag == playerTag && (!gardenData.IsPlanted() || gardenData.IsGrown()))
         {
-            popup.SetActive(true);
+            interactionPopup.SetActive(true);
             atPot = true;
+            plantPopup.SetActive(false);
         }
     }
 
@@ -55,8 +69,9 @@ public class GardenPlanter : MonoBehaviour
     {
         if (collider.tag == playerTag)
         {
-            popup.SetActive(false);
+            interactionPopup.SetActive(false);
             atPot = false;
+            plantPopup.SetActive(true);
         }
     }
 
@@ -67,6 +82,7 @@ public class GardenPlanter : MonoBehaviour
             inventory.SubItem(ingredient, 1);
             gardenData.changePlant(ingredient);
             setGrown();
+            SetPlantText();
         }
     }
 
@@ -105,5 +121,15 @@ public class GardenPlanter : MonoBehaviour
                 check = true;
         }
         return check;
+    }
+
+    void SetPlantText()
+    {
+        if (gardenData.GetPlant() == null)
+        {
+            plantText.text = "";
+            return;
+        }
+        plantText.text = gardenData.GetPlant().ingredientName;
     }
 }

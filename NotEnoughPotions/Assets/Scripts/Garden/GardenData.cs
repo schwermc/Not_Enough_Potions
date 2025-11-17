@@ -30,4 +30,6 @@ public class GardenData : ScriptableObject
         isPlanted = false;
         isGrown = false;
     }
+
+    public IngredientData GetPlant() { return plant; }
 }
