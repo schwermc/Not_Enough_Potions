@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4635214997630492059}
   - component: {fileID: 1112532757148898781}
   - component: {fileID: 3633330892470699041}
-  - component: {fileID: 2807050032536516214}
+  - component: {fileID: 4199645978741579877}
   - component: {fileID: 6539534116121395663}
   m_Layer: 5
   m_Name: PotionUI
@@ -269,7 +269,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2807050032536516214
+--- !u!114 &4199645978741579877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,6 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
-  data: {fileID: 0}
+  potionData: {fileID: 0}
   stationData: {fileID: 7081217589621694682, guid: 516fc5dbe73be0f4086e2a57e825357c, type: 3}
   hoverPopup: {fileID: 3153244181017706149, guid: 5876221c3036fa34fa3bef1867d13f1e, type: 3}
