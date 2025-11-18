@@ -55,6 +55,8 @@ public class GardenPlanter : MonoBehaviour
         }
     }
 
+    public bool AtPot() { return atPot; }
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == playerTag && (!gardenData.IsPlanted() || gardenData.IsGrown()))

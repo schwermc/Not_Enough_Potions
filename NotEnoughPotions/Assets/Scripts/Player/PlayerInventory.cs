@@ -5,6 +5,7 @@ public class PlayerInventory : MonoBehaviour
     private bool active = false;
     [SerializeField] GameObject inventory;
     [SerializeField] PotionStationData station;
+    [SerializeField] GardenMenu garden;
     [SerializeField] InventoryData playerInventory;
     [SerializeField] InventoryData startingInventory;
 
@@ -14,6 +15,8 @@ public class PlayerInventory : MonoBehaviour
         {
             if (station.getCheck())
                 station.updateUI();
+            if (garden.getCheck())
+                garden.updateUI();
             updateUI();
         }
     }

@@ -779,6 +779,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 555795649}
     - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+      propertyPath: gardenMenu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
       propertyPath: displayGarden
       value: 
       objectReference: {fileID: 1248330117}
@@ -1632,6 +1636,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 555795649}
     - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+      propertyPath: gardenMenu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
       propertyPath: displayGarden
       value: 
       objectReference: {fileID: 1248330117}
@@ -1730,7 +1738,7 @@ GameObject:
   - component: {fileID: 453496372}
   - component: {fileID: 453496373}
   m_Layer: 5
-  m_Name: Slots
+  m_Name: Garden Slots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2171,7 +2179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gardenList:
   - {fileID: 11400000, guid: 3c2c555f8d9248d46b17cc6500ad62b8, type: 2}
-  - {fileID: 11400000, guid: 67005de741b2237408b73cbc8dc0950a, type: 2}
+  - {fileID: 11400000, guid: 15dc4f53f23e404479d6152a0acec557, type: 2}
 --- !u!4 &555795650
 Transform:
   m_ObjectHideFlags: 0
@@ -3284,6 +3292,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1042813286185310199, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
   m_PrefabInstance: {fileID: 1520816816}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &901377534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+  m_PrefabInstance: {fileID: 1520816816}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475c64bd2e7ddf84b9b1160b7d6d6a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,6 +3644,10 @@ PrefabInstance:
       propertyPath: gardenList
       value: 
       objectReference: {fileID: 555795649}
+    - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+      propertyPath: gardenMenu
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
       propertyPath: displayGarden
       value: 
@@ -4679,9 +4702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff36758907c927d478e53aa1a92ad192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collision: 0
-  GardenList: {fileID: 555795649}
-  slots: {fileID: 453496371}
 --- !u!114 &1248330118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5137,6 +5157,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 555795649}
     - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+      propertyPath: gardenMenu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
       propertyPath: displayGarden
       value: 
       objectReference: {fileID: 1248330117}
@@ -5306,6 +5330,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356328252}
   m_CullTransparentMesh: 1
+--- !u!114 &1364812590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+  m_PrefabInstance: {fileID: 1314603169}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475c64bd2e7ddf84b9b1160b7d6d6a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1449548872
 GameObject:
   m_ObjectHideFlags: 0
@@ -5411,6 +5446,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1241255337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451113828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+  m_PrefabInstance: {fileID: 142269294}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475c64bd2e7ddf84b9b1160b7d6d6a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1503950728
 GameObject:
   m_ObjectHideFlags: 0
@@ -5682,6 +5728,10 @@ PrefabInstance:
       propertyPath: gardenList
       value: 
       objectReference: {fileID: 555795649}
+    - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+      propertyPath: gardenMenu
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
       propertyPath: displayGarden
       value: 
@@ -6050,6 +6100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 95778910}
   station: {fileID: 361403658}
+  garden: {fileID: 1967516629}
   playerInventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
   startingInventory: {fileID: 11400000, guid: d998820c2765f34429149364cc4fc403, type: 2}
 --- !u!1 &1741011728
@@ -6091,6 +6142,7 @@ MonoBehaviour:
   inventoryCheck: {fileID: 1714084241}
   potionStationData: {fileID: 361403658}
   pauseMenu: {fileID: 1741011731}
+  gardenMenu: {fileID: 1967516629}
   money: {fileID: 1241255339}
 --- !u!4 &1741011730
 Transform:
@@ -6122,6 +6174,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 579473560}
   playerInventory: {fileID: 1714084241}
   potionStationData: {fileID: 361403658}
+  gardenMenu: {fileID: 1967516629}
 --- !u!114 &1741011732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6409,6 +6462,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808001846}
   m_CullTransparentMesh: 1
+--- !u!114 &1808283234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+  m_PrefabInstance: {fileID: 975123712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475c64bd2e7ddf84b9b1160b7d6d6a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1828387882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+  m_PrefabInstance: {fileID: 2104091343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475c64bd2e7ddf84b9b1160b7d6d6a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1855240233
 GameObject:
   m_ObjectHideFlags: 0
@@ -6691,6 +6766,7 @@ GameObject:
   - component: {fileID: 1967516627}
   - component: {fileID: 1967516626}
   - component: {fileID: 1967516625}
+  - component: {fileID: 1967516629}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6787,6 +6863,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1967516629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967516624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76956d7c07cd88c44a9d4e29047c57d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1714084241}
+  gardenList: {fileID: 555795649}
+  gardenUI: {fileID: 1248330116}
+  slots: {fileID: 453496371}
+  gardenPot:
+  - {fileID: 1451113828}
+  - {fileID: 1984788864}
+  - {fileID: 1808283234}
+  - {fileID: 1364812590}
+  - {fileID: 1828387882}
+  - {fileID: 901377534}
 --- !u!1 &1983431552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6868,6 +6967,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1042813286185310199, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
   m_PrefabInstance: {fileID: 442136474}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1984788864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+  m_PrefabInstance: {fileID: 442136474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475c64bd2e7ddf84b9b1160b7d6d6a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2006898912
 GameObject:
   m_ObjectHideFlags: 0
@@ -7073,6 +7183,10 @@ PrefabInstance:
       propertyPath: gardenList
       value: 
       objectReference: {fileID: 555795649}
+    - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
+      propertyPath: gardenMenu
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5277877950087848789, guid: 5729d5350a24a4a4589e06b284d5148a, type: 3}
       propertyPath: displayGarden
       value: 
@@ -7313,6 +7427,6 @@ SceneRoots:
   - {fileID: 1714084239}
   - {fileID: 836341959}
   - {fileID: 352493737}
+  - {fileID: 555795650}
   - {fileID: 1967516628}
   - {fileID: 1197158879}
-  - {fileID: 555795650}
