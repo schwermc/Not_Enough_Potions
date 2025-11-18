@@ -6,16 +6,12 @@ WASD for Movement <br />
 Mouse to look around <br />
 I for player inventory <br />
 P for pause menu <br />
-E at the potion station  <br />
+E at the potion station & Garden Pots  <br />
 
 ## Added
-Add weekly counter <br />
-Add gold currency <br />
-Add a win condition <br />
-Add a popup to the potion station with what ingredients are needed <br />
-
-## Update
-Changed pause menu key bind from Escape & Delete to P <br />
+Add garden pot objects <br />
+Add garden pot UI <br />
+Made the plant within the garden pot grow over night <br />
 
 ## Credits
 **Andy W**: [Inventory System](https://www.youtube.com/watch?v=_IqTeruf3-s) <br />
