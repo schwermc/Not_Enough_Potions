@@ -8,7 +8,7 @@ public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public InventoryData inventory;
 
     private bool check;
-    private PotionItem buttonText;
+    private ItemButtonUI buttonText;
     private Button button;
     private TMP_Text hoverText;
 
@@ -25,7 +25,7 @@ public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         hoverPopup.SetActive(false);
 
-        buttonText = GetComponent<PotionItem>();
+        buttonText = GetComponent<ItemButtonUI>();
         button = GetComponent<Button>();
         for (int i = 0; i < stationData.Container.Count; i++)
         {

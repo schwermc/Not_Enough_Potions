@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlanted: 0
   isGrown: 0
-  plant: {fileID: 11400000, guid: 3c2c555f8d9248d46b17cc6500ad62b8, type: 2}
-  inventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
+  plant: {fileID: 0}

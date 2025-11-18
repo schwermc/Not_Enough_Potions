@@ -17,4 +17,6 @@ MonoBehaviour:
     amino acids, and antioxidants and could help bone regeneration '
   sellAmount: 6
   UiImage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
+  StationUiImage: {fileID: 8334269598078536416, guid: 27cfa5159739a274382334ad9748ba66, type: 3}
   type: 3
+  HarvestAmount: 1
