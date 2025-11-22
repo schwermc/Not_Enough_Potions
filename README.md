@@ -11,8 +11,5 @@ E at the potion station & garden pots <br />
 ## Added
 Added garden pot UI for players to choice what to plant <br />
 
-## Update
-
-
 ## Credits
 **Andy W**: [Inventory System](https://www.youtube.com/watch?v=_IqTeruf3-s) <br />
