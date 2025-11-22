@@ -37,16 +37,9 @@ public class GardenPlanter : MonoBehaviour
         interactionPopup.transform.rotation = Quaternion.LookRotation(interactionPopup.transform.position - Camera.main.transform.position);
         plantPopup.transform.rotation = Quaternion.LookRotation(plantPopup.transform.position - Camera.main.transform.position);
 
-        if (Input.GetKeyDown(KeyCode.E) && Planted(gardenData.IsPlanted()))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            AddPlant(gardenList.gardenList[0]);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && Planted(!gardenData.IsGrown()))
-        {
-            gardenData.harvestPlant(inventory);
-            setGrown();
-            SetPlantText();
+            PotHarvest();
         }
 
         if (gardenData.IsPlanted() && !gardenData.IsGrown())
@@ -56,6 +49,21 @@ public class GardenPlanter : MonoBehaviour
     }
 
     public bool AtPot() { return atPot; }
+
+    public void PotPlant(int index)
+    {
+        if (Planted(gardenData.IsPlanted()))
+            AddPlant(gardenList.gardenList[index]);
+    }
+    public void PotHarvest()
+    {
+        if (Planted(!gardenData.IsGrown()))
+        {
+            gardenData.harvestPlant(inventory);
+            setGrown();
+            SetPlantText();
+        }
+    }
 
     void OnTriggerEnter(Collider collider)
     {
@@ -107,7 +115,7 @@ public class GardenPlanter : MonoBehaviour
         }
     }
 
-    bool Planted(bool condition1 = false)
+    public bool Planted(bool condition1 = false)
     {
         if (!atPot || condition1)
             return false;
@@ -134,4 +142,6 @@ public class GardenPlanter : MonoBehaviour
         }
         plantText.text = gardenData.GetPlant().ingredientName;
     }
+
+    public GardenData GetGardenData() { return gardenData; }
 }

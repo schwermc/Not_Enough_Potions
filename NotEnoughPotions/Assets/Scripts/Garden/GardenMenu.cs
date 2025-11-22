@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GardenMenu : MonoBehaviour
 {
+    private int currentIndex = -1;
     private bool active = false;
 
     [SerializeField] PlayerInventory inventory;
@@ -68,6 +69,7 @@ public class GardenMenu : MonoBehaviour
         {
             if (gardenPot[i].AtPot())
             {
+                Index(i);
                 check = true;
                 break;
             }
@@ -75,4 +77,8 @@ public class GardenMenu : MonoBehaviour
 
         return check;
     }
+
+    void Index(int index) { currentIndex = index; }
+    public int Index() { return currentIndex; }
+    public List<GardenPlanter> returnGardenList() { return gardenPot; }
 }
