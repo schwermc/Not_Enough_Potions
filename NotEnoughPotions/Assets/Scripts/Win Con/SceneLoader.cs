@@ -18,6 +18,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] PlayerInventory inventoryCheck;
     [SerializeField] PotionStationData potionStationData;
     [SerializeField] PauseMenu pauseMenu;
+    [SerializeField] GardenMenu gardenMenu;
     [SerializeField] Money money;
 
     void Start()
@@ -56,7 +57,7 @@ public class SceneLoader : MonoBehaviour
 
     private bool GetCheck()
     {
-        if (inventoryCheck.getCheck() || potionStationData.getCheck() || pauseMenu.getCheck())
+        if (inventoryCheck.getCheck() || potionStationData.getCheck() || pauseMenu.getCheck() || gardenMenu.getCheck())
             return false;
         return true;
     }

@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1112532757148898781}
   - component: {fileID: 3633330892470699041}
   - component: {fileID: 2807050032536516214}
-  - component: {fileID: 8358429266369654496}
+  - component: {fileID: 4963838375936038294}
   m_Layer: 5
   m_Name: GardenUI
   m_TagString: Untagged
@@ -257,9 +257,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MakePotion, Assembly-CSharp
-        m_MethodName: potionButton
+      - m_Target: {fileID: 4963838375936038294}
+        m_TargetAssemblyTypeName: PlantButton, Assembly-CSharp
+        m_MethodName: updatePot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 2657639440886990517}
---- !u!114 &8358429266369654496
+--- !u!114 &4963838375936038294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,6 +291,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8334269598078536416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d462e376b09ad40b3111873d752ca0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ab43960f4e9ab34082cda1e6c8b31b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonName: {fileID: 2807050032536516214}
+  inventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
+  gardenMenu: {fileID: 0}
