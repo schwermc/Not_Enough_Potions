@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class Money : MonoBehaviour
 {
-    private static float gold = 0f;
+    private static float gold = 10f;
     [SerializeField] TMP_Text text;
+    [SerializeField] TMP_Text wintext;
     [SerializeField] float neededGold = 0;
 
     void Start()
     {
         updateGold();
+        wintext.text = "/  " + neededGold.ToString() + " G";
     }
 
     public void AddGold(float amount) {gold += amount; }
