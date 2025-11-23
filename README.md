@@ -11,5 +11,8 @@ E at the potion station & garden pots <br />
 ## Added
 Added garden pot UI for players to choice what to plant <br />
 
+## Update
+Update the gold UI to show the amount of gold needed <br />
+
 ## Credits
 **Andy W**: [Inventory System](https://www.youtube.com/watch?v=_IqTeruf3-s) <br />
