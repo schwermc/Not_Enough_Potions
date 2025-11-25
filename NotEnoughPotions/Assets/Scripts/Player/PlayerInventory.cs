@@ -3,12 +3,20 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     private bool active = false;
+
     [SerializeField] GameObject inventory;
     [SerializeField] PotionStationData station;
     [SerializeField] GardenMenu garden;
     [SerializeField] ShopData shop;
     [SerializeField] InventoryData playerInventory;
     [SerializeField] InventoryData startingInventory;
+    [SerializeField] WeekCounter weekCounter;
+
+    public void Start()
+    {
+        if (weekCounter.GetWeekCounter() == 1)
+            ClearInventory();
+    }
 
     void Update()
     {
@@ -45,6 +53,11 @@ public class PlayerInventory : MonoBehaviour
     }
 
     void OnApplicationQuit()
+    {
+        ClearInventory();
+    }
+
+    internal void ClearInventory()
     {
         playerInventory.Container.Clear();
         for (int i = 0; i < startingInventory.Container.Count; i++)
