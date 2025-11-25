@@ -29,6 +29,7 @@ public class ShopDisplay : MonoBehaviour
             var obj = Instantiate(shopData.shopList[i].itemInfo().ShopUiImage, Vector3.zero, Quaternion.identity, slots.transform);
             obj.GetComponent<InventoryItem>().setName(shopData.shopList[i].itemInfo().ingredientName);
             obj.GetComponent<InventoryItem>().setAmount((int)shopData.shopList[i].priceInfo());
+            obj.name = shopData.shopList[i].itemInfo().ingredientName;
         }
     }
 }

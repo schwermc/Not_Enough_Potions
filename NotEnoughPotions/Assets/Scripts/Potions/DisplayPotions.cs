@@ -28,6 +28,7 @@ public class DisplayPotions : MonoBehaviour
         {
             var obj = Instantiate(stationData.Container[i].StationUiImage, Vector3.zero, Quaternion.identity, slots.transform);
             obj.GetComponent<ItemButtonUI>().setName(stationData.Container[i].ingredientName);
+            obj.name = stationData.Container[i].ingredientName;
         }
     }
 }

@@ -1623,7 +1623,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5513788395146170867, guid: fe9b9e1bc3b6a814fa81f69e137cf226, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.01
+      value: -6.82
       objectReference: {fileID: 0}
     - target: {fileID: 5513788395146170867, guid: fe9b9e1bc3b6a814fa81f69e137cf226, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1782,7 +1782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &472938159
 Transform:
   m_ObjectHideFlags: 0
@@ -1792,7 +1792,7 @@ Transform:
   m_GameObject: {fileID: 472938158}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.12, z: -5}
+  m_LocalPosition: {x: 0, y: 6.76, z: -5}
   m_LocalScale: {x: 20, y: 0.1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4759,7 +4759,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5513788395146170867, guid: fe9b9e1bc3b6a814fa81f69e137cf226, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1000004
+      value: -3.86
       objectReference: {fileID: 0}
     - target: {fileID: 5513788395146170867, guid: fe9b9e1bc3b6a814fa81f69e137cf226, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5153,8 +5153,8 @@ Transform:
   m_GameObject: {fileID: 1241255335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 7.41, y: 1, z: 1.23}
-  m_LocalScale: {x: 1, y: 2, z: 5}
+  m_LocalPosition: {x: 6, y: 1, z: 1.23}
+  m_LocalScale: {x: 1, y: 2, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1449548876}
@@ -6711,7 +6711,7 @@ GameObject:
   - component: {fileID: 1741011734}
   m_Layer: 0
   m_Name: _GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6810,7 +6810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1503950730}
   wintext: {fileID: 600849308}
-  neededGold: 200
+  neededGold: 80
 --- !u!1 &1753193205
 GameObject:
   m_ObjectHideFlags: 0
@@ -7436,7 +7436,7 @@ GameObject:
   - component: {fileID: 1898494041}
   m_Layer: 0
   m_Name: Shop
-  m_TagString: Untagged
+  m_TagString: ShopStation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7550,6 +7550,10 @@ MonoBehaviour:
     price: 8
   - itemData: {fileID: 11400000, guid: dd56e1545bcd68c44b01cc73ca8776af, type: 2}
     price: 11
+  - itemData: {fileID: 11400000, guid: 3c2c555f8d9248d46b17cc6500ad62b8, type: 2}
+    price: 9
+  - itemData: {fileID: 11400000, guid: 15dc4f53f23e404479d6152a0acec557, type: 2}
+    price: 15
   inventory: {fileID: 1714084241}
   shopUI: {fileID: 1071519401}
 --- !u!1 &1927679563

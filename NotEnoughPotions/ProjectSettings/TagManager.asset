@@ -7,6 +7,8 @@ TagManager:
   - Ingredient
   - HoverPopup
   - GardenPlanters
+  - ShopStation
+  - GameManager
   layers:
   - Default
   - TransparentFX
