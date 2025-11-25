@@ -21,6 +21,7 @@ MonoBehaviour:
     of your health lest you die from blood loss"'
   sellAmount: 20
   UiImage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
+  ShopUiImage: {fileID: 8334269598078536416, guid: ef50f58252f544447aba4bd40d38cb1f, type: 3}
   StationUiImage: {fileID: 8334269598078536416, guid: ed1ed86cb51c00247ae2171db817f174, type: 3}
   type: 0
   Ingredients:

@@ -6,6 +6,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] GameObject inventory;
     [SerializeField] PotionStationData station;
     [SerializeField] GardenMenu garden;
+    [SerializeField] ShopData shop;
     [SerializeField] InventoryData playerInventory;
     [SerializeField] InventoryData startingInventory;
 
@@ -17,6 +18,8 @@ public class PlayerInventory : MonoBehaviour
                 station.updateUI();
             if (garden.getCheck())
                 garden.updateUI();
+            if (shop.getCheck())
+                shop.updateUI();
             updateUI();
         }
     }

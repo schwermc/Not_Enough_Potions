@@ -7,5 +7,6 @@ public class ItemData : ScriptableObject
     public string description;
     public float sellAmount;
     public GameObject UiImage;
+    public GameObject ShopUiImage;
     public GameObject StationUiImage;
 }
