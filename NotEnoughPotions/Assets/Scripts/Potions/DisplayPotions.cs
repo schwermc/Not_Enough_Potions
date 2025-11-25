@@ -22,7 +22,7 @@ public class DisplayPotions : MonoBehaviour
         return collision;
     }
 
-    void CreateDisplay()
+    internal void CreateDisplay()
     {
         for (int i = 0; i < stationData.Container.Count; i++)
         {

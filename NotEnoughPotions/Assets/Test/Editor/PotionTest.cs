@@ -3,11 +3,18 @@ using NUnit.Framework;
 
 public class PotionTest
 {
-    [Test]
-    public void DisplayPotions_CheckCollision()
+    DisplayPotions displayPotions;
+
+    [SetUp]
+    public void SetUp()
     {
-        var displayPotions = Substitute.For<DisplayPotions>();
+        displayPotions = Substitute.For<DisplayPotions>();
         displayPotions.SetCollision(true);
+    }
+
+    [Test]
+    public void DisplayPotions_GetCollision()
+    {
         Assert.IsTrue(displayPotions.GetCollision());
     }
 }
