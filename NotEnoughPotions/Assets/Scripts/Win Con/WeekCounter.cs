@@ -2,19 +2,27 @@ using UnityEngine;
 
 public class WeekCounter : MonoBehaviour
 {
-    private static int weekAmount = 0;
+    private static int dayCounter = 1;
+    private static bool newWeek = true;
     [SerializeField] static int weekCounter = 1;
 
     public void UpdateWeek()
     {
-        weekCounter++;
-        if (weekCounter > 7)
+        Debug.Log(dayCounter);
+        newWeek = false;
+        dayCounter++;
+        if (dayCounter > 7)
         {
-            weekCounter = 1;
-            weekAmount++;
+            dayCounter = 1;
+            weekCounter++;
+            newWeek = true;
         }
     }
 
     public int GetWeekCounter() { return weekCounter; }
-    public int GetCurrentWeek() { return weekAmount; }
+    public int GetCurrentDay() { return dayCounter; }
+
+    public bool NewWeek() { return newWeek; }
+
+    public void RestartCount() { dayCounter = 1; weekCounter = 1;  newWeek = true; }
 }

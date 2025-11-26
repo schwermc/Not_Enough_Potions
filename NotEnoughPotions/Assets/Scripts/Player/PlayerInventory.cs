@@ -14,7 +14,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void Start()
     {
-        if (weekCounter.GetWeekCounter() == 1)
+        if (weekCounter.NewWeek() && weekCounter.GetWeekCounter() == 1)
             ClearInventory();
     }
 

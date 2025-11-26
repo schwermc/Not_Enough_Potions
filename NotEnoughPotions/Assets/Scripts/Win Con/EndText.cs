@@ -8,6 +8,8 @@ public class EndText : MonoBehaviour
     private EndCondition endCondition;
     private LoadScene loadScene;
 
+    [SerializeField] WeekCounter weekCounter;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -21,6 +23,7 @@ public class EndText : MonoBehaviour
 
     public void retryGame()
     {
+        weekCounter.RestartCount();
         loadScene.loadScene(SceneNames.gameScene);
     }
 

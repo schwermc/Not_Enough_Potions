@@ -13,7 +13,7 @@ public class Money : MonoBehaviour
 
     void Start()
     {
-        if (weekCounter.GetWeekCounter() == 1)
+        if (weekCounter.NewWeek() && weekCounter.GetWeekCounter() == 1)
             gold = startingGold;
         updateGold();
         wintext.text = "/  " + neededGold.ToString() + " G";
