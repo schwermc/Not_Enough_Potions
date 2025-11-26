@@ -20,6 +20,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] PauseMenu pauseMenu;
     [SerializeField] GardenMenu gardenMenu;
     [SerializeField] Money money;
+    [SerializeField] int amountOfWeeks = 1;
 
     void Start()
     {
@@ -43,10 +44,10 @@ public class SceneLoader : MonoBehaviour
 
     public void endDay(String name)
     {
-        if (weekCounter.GetWeekCounter() <= 7)
+        if (weekCounter.GetCurrentDay() <= 7)
             weekCounter.UpdateWeek();
 
-        if (weekCounter.GetCurrentWeek() > 0)
+        if (weekCounter.GetWeekCounter() > amountOfWeeks)
         {
             name = endCondition.GetSceneName();
             endCondition.SetGameWon(money.HaveEnoughGold());

@@ -6695,6 +6695,7 @@ MonoBehaviour:
   shop: {fileID: 1898494041}
   playerInventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
   startingInventory: {fileID: 11400000, guid: d998820c2765f34429149364cc4fc403, type: 2}
+  weekCounter: {fileID: 1741011733}
 --- !u!1 &1741011728
 GameObject:
   m_ObjectHideFlags: 0
@@ -6808,6 +6809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08571eb57bb4dda40b560bbb4583760a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weekCounter: {fileID: 1741011733}
   text: {fileID: 1503950730}
   wintext: {fileID: 600849308}
   neededGold: 80
