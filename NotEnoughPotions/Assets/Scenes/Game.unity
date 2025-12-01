@@ -1671,7 +1671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8542090191402037598, guid: fe9b9e1bc3b6a814fa81f69e137cf226, type: 3}
       propertyPath: Container.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8542090191402037598, guid: fe9b9e1bc3b6a814fa81f69e137cf226, type: 3}
       propertyPath: Container.Array.data[0].item
@@ -4811,7 +4811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8542090191402037598, guid: fe9b9e1bc3b6a814fa81f69e137cf226, type: 3}
       propertyPath: Container.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8542090191402037598, guid: fe9b9e1bc3b6a814fa81f69e137cf226, type: 3}
       propertyPath: Container.Array.data[0].item
@@ -6694,7 +6694,7 @@ MonoBehaviour:
   garden: {fileID: 2062368490}
   shop: {fileID: 1898494041}
   playerInventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
-  startingInventory: {fileID: 11400000, guid: d998820c2765f34429149364cc4fc403, type: 2}
+  startingInventory: {fileID: 11400000, guid: 3baf388b1e1dccb4bb17541957ee02ac, type: 2}
   weekCounter: {fileID: 1741011733}
 --- !u!1 &1741011728
 GameObject:
@@ -6710,6 +6710,7 @@ GameObject:
   - component: {fileID: 1741011732}
   - component: {fileID: 1741011733}
   - component: {fileID: 1741011734}
+  - component: {fileID: 1741011735}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: GameManager
@@ -6738,6 +6739,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 1741011731}
   gardenMenu: {fileID: 2062368490}
   money: {fileID: 1741011734}
+  amountOfWeeks: 1
 --- !u!4 &1741011730
 Transform:
   m_ObjectHideFlags: 0
@@ -6813,6 +6815,19 @@ MonoBehaviour:
   text: {fileID: 1503950730}
   wintext: {fileID: 600849308}
   neededGold: 80
+--- !u!114 &1741011735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741011728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f212ec1094d304ba9bee7bfd729f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potions: {fileID: 11400000, guid: a9ce45ef340e1d448bd38def2c93a2a5, type: 2}
 --- !u!1 &1753193205
 GameObject:
   m_ObjectHideFlags: 0

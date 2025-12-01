@@ -9,7 +9,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] GardenMenu garden;
     [SerializeField] ShopData shop;
     [SerializeField] InventoryData playerInventory;
-    [SerializeField] InventoryData startingInventory;
+    [SerializeField] CartList startingInventory;
     [SerializeField] WeekCounter weekCounter;
 
     public void Start()
@@ -60,9 +60,10 @@ public class PlayerInventory : MonoBehaviour
     internal void ClearInventory()
     {
         playerInventory.Container.Clear();
-        for (int i = 0; i < startingInventory.Container.Count; i++)
+        for (int i = 0; i < startingInventory.list.Count; i++)
         {
-            playerInventory.Container.Add(startingInventory.Container[i]);
+            InventorySlot newSlot = new InventorySlot(startingInventory.list[i], 1);
+            playerInventory.Container.Add(newSlot);
         }
     }
 

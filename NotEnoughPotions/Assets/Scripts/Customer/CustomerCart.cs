@@ -10,16 +10,19 @@ public class CustomerCart : MonoBehaviour
     public CartList nonplantIngredients;
     public bool soldTo = false;
 
-    void Start()
+    void Awake()
     {
         int listSize = Random.Range(1, 4);
         for (int i = 0; i < listSize; i++)
         {
-            Container.Add(AddToCartItem());
+            CartItem newItem = MakeCartItem();
+            if (Container.Count > 0 && isItemInContainer(newItem.getItem()))
+                continue;
+            Container.Add(newItem);
         }
     }
 
-    CartItem AddToCartItem()
+    public CartItem MakeCartItem()
     {
         CartItem item = new CartItem();
         int cartListChoose = Random.Range(0, 3);
@@ -43,10 +46,20 @@ public class CustomerCart : MonoBehaviour
         {
             number = Random.Range(0, nonplantIngredients.list.Count);
             item.setItem(nonplantIngredients.list[number]);
-            item.setAmount(Random.Range(1, 4));
+            item.setAmount(1);
         }
 
         return item;
+    }
+
+    bool isItemInContainer(ItemData item)
+    {
+        for(int i = 0; i < Container.Count; i++)
+        {
+            if (Container[i].getItem().ingredientName == item.ingredientName)
+                return true;
+        }
+        return false;
     }
 }
 
