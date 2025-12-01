@@ -9,4 +9,10 @@ public class ItemData : ScriptableObject
     public GameObject UiImage;
     public GameObject ShopUiImage;
     public GameObject StationUiImage;
+
+    public virtual void UpdatePrice()
+    {
+        if (sellAmount < 1)
+            sellAmount = 1;
+    }
 }
