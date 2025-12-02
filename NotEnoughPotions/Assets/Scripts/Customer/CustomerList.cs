@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CustomerList : MonoBehaviour
 {
+    private int costOfCart = 0;
+
     [SerializeField] CustomerCart cart;
     [SerializeField] TMP_Text text;
 
@@ -11,9 +13,11 @@ public class CustomerList : MonoBehaviour
         for (int i = 0; i < cart.Container.Count; i++)
         {
             text.text += cart.Container[i].getItem().name + ": " + cart.Container[i].getAmount();
-            if (i < cart.Container.Count - 1)
+            costOfCart += (int) cart.Container[i].getItem().sellAmount * cart.Container[i].getAmount();
+            if (i < cart.Container.Count)
                 text.text += "\n";
         }
+        text.text += costOfCart.ToString() + " G";
     }
 
     void Update()

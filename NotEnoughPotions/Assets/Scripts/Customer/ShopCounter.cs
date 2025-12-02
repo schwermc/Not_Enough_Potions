@@ -80,7 +80,7 @@ public class ShopCounter : MonoBehaviour
         if (index >= 0 && inventory.Container[index].amount > 0)
         {
             inventory.SubItem(item, amount);
-            money.AddGold(item.sellAmount);
+            money.AddGold(item.sellAmount * amount);
         }
         money.updateGold();
     }

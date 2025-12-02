@@ -258,7 +258,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 4c77335da6be5454e92ec0750af28f74, type: 2}
   Container: []
+  potions: {fileID: 11400000, guid: a9ce45ef340e1d448bd38def2c93a2a5, type: 2}
+  plantIngredients: {fileID: 11400000, guid: 49b712b665f50e442aeba80a3b3a7de7, type: 2}
+  nonplantIngredients: {fileID: 11400000, guid: de9b967763aa89848a027b356f86e222, type: 2}
   soldTo: 0
+  MaxListSize: 3
 --- !u!114 &2027149595992845238
 MonoBehaviour:
   m_ObjectHideFlags: 0
