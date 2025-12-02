@@ -13,7 +13,9 @@ public class PotionData : ItemData
     {
         float newPrice = 0;
         for (int i = 0; i < Ingredients.Count; i++)
+        {
             newPrice += Ingredients[i].item.sellAmount;
+        }
         newPrice += (int) (newPrice * 0.45f);
         this.sellAmount = newPrice;
     }

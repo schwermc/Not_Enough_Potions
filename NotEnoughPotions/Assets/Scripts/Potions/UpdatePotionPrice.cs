@@ -7,6 +7,8 @@ public class UpdatePotionPrice : MonoBehaviour
     public void Start()
     {
         for (int i = 0; i < potions.list.Count; i++)
+        {
             potions.list[i].UpdatePrice();
+        }
     }
 }
