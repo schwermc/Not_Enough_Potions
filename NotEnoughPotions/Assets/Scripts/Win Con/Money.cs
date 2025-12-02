@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Money : MonoBehaviour
 {
-    private static float gold = 30f;
-    private const float startingGold = 30f;
+    private static float gold = 100f;
+    private const float startingGold = 100f;
 
     [SerializeField] WeekCounter weekCounter;
     [SerializeField] TMP_Text text;

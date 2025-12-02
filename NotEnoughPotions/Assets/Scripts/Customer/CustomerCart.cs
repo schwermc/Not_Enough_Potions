@@ -10,9 +10,11 @@ public class CustomerCart : MonoBehaviour
     public CartList nonplantIngredients;
     public bool soldTo = false;
 
+    [SerializeField] int MaxListSize = 4;
+
     void Awake()
     {
-        int listSize = Random.Range(1, 4);
+        int listSize = Random.Range(1, MaxListSize);
         for (int i = 0; i < listSize; i++)
         {
             CartItem newItem = MakeCartItem();
@@ -25,7 +27,7 @@ public class CustomerCart : MonoBehaviour
     public CartItem MakeCartItem()
     {
         CartItem item = new CartItem();
-        int cartListChoose = Random.Range(0, 3);
+        int cartListChoose = Random.Range(0, 2);
         int number;
 
         if (cartListChoose == 0) // potions
@@ -39,16 +41,16 @@ public class CustomerCart : MonoBehaviour
         {
             number = Random.Range(0, plantIngredients.list.Count);
             item.setItem(plantIngredients.list[number]);
-            item.setAmount(Random.Range(1, 5));
+            item.setAmount(Random.Range(1, 4));
         }
-
+/*
         if (cartListChoose == 2) // non-plants
         {
             number = Random.Range(0, nonplantIngredients.list.Count);
             item.setItem(nonplantIngredients.list[number]);
             item.setAmount(1);
         }
-
+*/
         return item;
     }
 
