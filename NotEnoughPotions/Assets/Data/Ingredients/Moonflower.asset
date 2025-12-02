@@ -20,4 +20,4 @@ MonoBehaviour:
   ShopUiImage: {fileID: 8334269598078536416, guid: ef50f58252f544447aba4bd40d38cb1f, type: 3}
   StationUiImage: {fileID: 8334269598078536416, guid: 27cfa5159739a274382334ad9748ba66, type: 3}
   type: 0
-  HarvestAmount: 2
+  HarvestAmount: 3
