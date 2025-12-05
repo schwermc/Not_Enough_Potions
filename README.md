@@ -17,3 +17,7 @@ Update the gold UI to show the amount of gold needed <br />
 
 ## Credits
 **Andy W**: [Inventory System](https://www.youtube.com/watch?v=_IqTeruf3-s) <br />
+
+## Assests
+**Mikes Digital Emporium**: [Medieval Village Building Kit](https://assetstore.unity.com/packages/3d/environments/medieval-village-building-kit-116540) <br />
+**DEXSOFT**: [Furniture FREE Pack](https://assetstore.unity.com/packages/3d/props/furniture/furniture-free-pack-192628) <br />
