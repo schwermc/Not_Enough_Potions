@@ -10,11 +10,11 @@ public class CustomerCart : MonoBehaviour
     public CartList nonplantIngredients;
     public bool soldTo = false;
 
-    [SerializeField] int MaxListSize = 4;
+    [SerializeField] int MaxListSize = 3;
 
     void Awake()
     {
-        int listSize = Random.Range(1, MaxListSize);
+        int listSize = Random.Range(1, MaxListSize + 1);
         for (int i = 0; i < listSize; i++)
         {
             CartItem newItem = MakeCartItem();
