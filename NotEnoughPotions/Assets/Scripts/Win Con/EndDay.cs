@@ -3,12 +3,11 @@ using TMPro;
 
 using System;
 
-public class SceneLoader : MonoBehaviour
+public class EndDay : MonoBehaviour
 {
     public ShopCounter finishDay;
     public GameObject endDayUI;
 
-    private TMP_Text text;
     private EndCondition endCondition;
     private LoadScene loadScene;
 
@@ -24,7 +23,6 @@ public class SceneLoader : MonoBehaviour
 
     void Start()
     {
-        text = endDayUI.GetComponent<TMP_Text>();
         endCondition = new EndCondition();
         loadScene = new LoadScene();
     }
@@ -33,7 +31,6 @@ public class SceneLoader : MonoBehaviour
     {
         if (finishDay.finishDay)
         {
-            text.text = "Press N to end day";
             endDayUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.N) && GetCheck())
             {
