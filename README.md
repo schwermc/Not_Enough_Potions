@@ -6,14 +6,13 @@ WASD for Movement <br />
 Mouse to look around <br />
 I for player inventory <br />
 P for pause menu <br />
-E at the potion station, garden pots, and in front of the shop counter <br />
+E at the potion table, garden pots, and in front of the shop counter <br />
 
 ## Added
-Added garden pot UI for players to choice what to plant <br />
-Added shop counter with working UI and function <br />
+Add more potions and ingredients <br />
 
 ## Update
-Update the gold UI to show the amount of gold needed <br />
+Update the building design <br />
 
 ## Credits
 **Andy W**: [Inventory System](https://www.youtube.com/watch?v=_IqTeruf3-s) <br />

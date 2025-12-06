@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755cc658aaab71c41ba35d0e9f97afcf, type: 3}
+  m_Name: Forced Hallucination
+  m_EditorClassIdentifier: 
+  ingredientName: Forced Hallucination
+  description: '"Being forced to hallucinate is not the best way to view the world.
+    On the bright side, you will be numb to most pain and have zero inflammation!
+
+    
+
+    Caution!
+    There will be side effects that might get you arrested and interrupt your system''s
+    balance. "'
+  sellAmount: 46
+  UiImage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
+  ShopUiImage: {fileID: 8334269598078536416, guid: ef50f58252f544447aba4bd40d38cb1f, type: 3}
+  StationUiImage: {fileID: 8334269598078536416, guid: ed1ed86cb51c00247ae2171db817f174, type: 3}
+  type: 0
+  Ingredients:
+  - item: {fileID: 11400000, guid: 25b73f861061dc844aaef60f210e42ee, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 7547ca04bf578884cb7e2ed8f21b0669, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: 44a169de4c1a1d547a3a7fbf11ab9d1d, type: 2}
+    amount: 3
+  - item: {fileID: 11400000, guid: dd56e1545bcd68c44b01cc73ca8776af, type: 2}
+    amount: 1

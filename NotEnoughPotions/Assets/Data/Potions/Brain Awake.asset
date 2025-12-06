@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 755cc658aaab71c41ba35d0e9f97afcf, type: 3}
-  m_Name: Pain Relief
+  m_Name: Brain Awake
   m_EditorClassIdentifier: 
-  ingredientName: Pain Relief
-  description: '"Numb your nerves by getting rid of general pain! You will and cannot
-    feel anything anymore!
+  ingredientName: Brain Awake
+  description: '"Dull the pain and increase your awakeness by tenfold! This strong,
+    tingly smell will jolt your brain awake, including your body!
 
+    
 
-    Caution! Since the pain will be gone, be careful
-    of your health lest you die from blood loss"'
-  sellAmount: 36
+    Caution!
+    People who are sensitive or hate strong smells might throw up after being near
+    this while open."'
+  sellAmount: 53
   UiImage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
   ShopUiImage: {fileID: 8334269598078536416, guid: ef50f58252f544447aba4bd40d38cb1f, type: 3}
   StationUiImage: {fileID: 8334269598078536416, guid: ed1ed86cb51c00247ae2171db817f174, type: 3}
-  type: 0
+  type: 1
   Ingredients:
-  - item: {fileID: 11400000, guid: 71967be2a2314bf4ea614aef486b2161, type: 2}
-    amount: 2
-  - item: {fileID: 11400000, guid: f71263813c0407741b035ebdae24dc01, type: 2}
-    amount: 1
   - item: {fileID: 11400000, guid: 3c2c555f8d9248d46b17cc6500ad62b8, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 4fcb7669339d38841a712ae323d2c164, type: 2}
     amount: 2
+  - item: {fileID: 11400000, guid: a5f2cab0ef042634a95e946007436c24, type: 2}
+    amount: 3

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40d3920e49b3f554b896417002080b07, type: 3}
-  m_Name: Pearl Powder
+  m_Name: Moonflower Seed
   m_EditorClassIdentifier: 
-  ingredientName: Pearl Powder
-  description: 'While further research is needed, pearl powder is rich in minerals,
-    amino acids, and antioxidants and could help bone regeneration '
-  sellAmount: 15
+  ingredientName: Moonflower Seed
+  description: If used on animals it can cause reproduction problems, but if used
+    on humans, it can disrupt hormonal balance
+  sellAmount: 5
   UiImage: {fileID: 8334269598078536416, guid: 54ae108c80c41584793eaa558050e522, type: 3}
   ShopUiImage: {fileID: 8334269598078536416, guid: ef50f58252f544447aba4bd40d38cb1f, type: 3}
   StationUiImage: {fileID: 8334269598078536416, guid: 27cfa5159739a274382334ad9748ba66, type: 3}
-  type: 3
+  type: 0
   HarvestAmount: 1
