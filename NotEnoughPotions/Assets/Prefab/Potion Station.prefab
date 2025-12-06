@@ -124,6 +124,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Container:
   - {fileID: 11400000, guid: d3d7e98fe110598479860e37051ebc28, type: 2}
+  - {fileID: 11400000, guid: 6b887d69a816ebf4e812c8acd45ee0f1, type: 2}
+  - {fileID: 11400000, guid: c525f9648e33baf4d89f2c5e9e11fe27, type: 2}
+  - {fileID: 11400000, guid: c25eb36d289f7154fa34ac7f229e9dcc, type: 2}
+  - {fileID: 11400000, guid: ce3cd061b9a42cd44ba7da37351bd7d1, type: 2}
+  - {fileID: 11400000, guid: c62956e5b026bc94a81d6f27bbbce22f, type: 2}
   inventory: {fileID: 0}
   potionUI: {fileID: 0}
 --- !u!1 &6945000395319020367
