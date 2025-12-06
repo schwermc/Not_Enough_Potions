@@ -8,6 +8,9 @@ I for player inventory <br />
 P for pause menu <br />
 E at the potion table, garden pots, and in front of the shop counter <br />
 
+## Added
+Add more potions and ingredients <br />
+
 ## Update
 Update the building design <br />
 
