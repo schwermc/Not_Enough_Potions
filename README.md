@@ -10,6 +10,7 @@ E at the potion table, garden pots, and in front of the shop counter <br />
 
 ## Added
 Add more potions and ingredients <br />
+Add a menu scene <br />
 
 ## Update
 Update the building design <br />
