@@ -15,4 +15,6 @@ public class ItemData : ScriptableObject
         if (sellAmount < 1)
             sellAmount = 1;
     }
+
+    public virtual string GetItemType() { return " "; }
 }

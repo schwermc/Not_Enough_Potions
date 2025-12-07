@@ -73,7 +73,7 @@ public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     bool checkList(PotionData potion)
     {
-        bool notInList = false;
+        bool notInList = true;
         int listAmount = 0;
 
         if (inventory.Container.Count < 1)
@@ -85,6 +85,7 @@ public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             for (int j = 0; j < inventory.Container.Count; j++)
             {
+                notInList = true;
                 if (potion.Ingredients[i].item == inventory.Container[j].getItem())
                 {
                     if (potion.Ingredients[i].amount > inventory.Container[j].getAmount())
@@ -95,7 +96,6 @@ public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                     listAmount++;
                     continue;
                 }
-                notInList = true;
             }
         }
 
@@ -103,7 +103,7 @@ public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             return false;
         }
-
+        Debug.Log(listAmount);
         return true;
     }
 
