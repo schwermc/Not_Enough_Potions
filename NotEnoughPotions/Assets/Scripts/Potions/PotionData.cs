@@ -20,6 +20,8 @@ public class PotionData : ItemData
         this.sellAmount = newPrice;
     }
 
+    public override string GetItemType() { return type.ToString(); }
+
     public string ListIngredients()
     {
         list = "";

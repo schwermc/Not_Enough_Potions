@@ -62,8 +62,12 @@ public class PlayerInventory : MonoBehaviour
         playerInventory.Container.Clear();
         for (int i = 0; i < startingInventory.list.Count; i++)
         {
-            InventorySlot newSlot = new InventorySlot(startingInventory.list[i], 1);
+            InventorySlot newSlot = new InventorySlot(startingInventory.list[i], 0);
             playerInventory.Container.Add(newSlot);
+            if (newSlot.getItem().GetItemType() == IngredientType.Plant.ToString())
+            {
+                playerInventory.AddItem(newSlot.getItem(), 1);
+            }
         }
     }
 
