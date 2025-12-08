@@ -4,7 +4,7 @@ using UnityEngine;
 public class Money : MonoBehaviour
 {
     private static float gold = 100f;
-    private const float startingGold = 100f;
+    private const float startingGold = 200f;
 
     [SerializeField] WeekCounter weekCounter;
     [SerializeField] TMP_Text text;
