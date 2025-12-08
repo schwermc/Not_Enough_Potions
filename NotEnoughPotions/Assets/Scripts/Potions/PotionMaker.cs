@@ -103,7 +103,6 @@ public class PotionMaker : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             return false;
         }
-        Debug.Log(listAmount);
         return true;
     }
 
