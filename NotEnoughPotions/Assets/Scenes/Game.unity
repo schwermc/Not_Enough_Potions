@@ -6197,7 +6197,7 @@ MonoBehaviour:
   weekCounter: {fileID: 944652366}
   text: {fileID: 1732269680}
   wintext: {fileID: 117640183}
-  neededGold: 150
+  neededGold: 300
 --- !u!114 &944652368
 MonoBehaviour:
   m_ObjectHideFlags: 0
